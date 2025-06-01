@@ -49,7 +49,40 @@ return[
 		// 	'controller'=>'\\App\\Http\\Controllers\\Admin\\TesController',
 		// ]
 	],
-	// 'content'=>[
+	'content'=>[
+		'home_content'=>[
+			'label'=>'Home',
+			'is_parent'=>true
+		],
+		'home'=>[
+			'label'=>'Slider',
+			'parent'=>'home_content',
+			'route'=>['setting'],
+			'controller'=>'\\App\\Http\\Controllers\\Admin\\HomeController',
+			'fa'=>'fa fa-gear'
+		],
+
+		'section2'=>[
+			'label'=>'Section 2',
+			'parent'=>'home_content',
+			'route'=>['index','edit'],
+			'controller'=>'\\App\\Http\\Controllers\\Admin\\Section2homeController',
+			'fa'=>'fa fa-gear'
+		],
+		'section3'=>[
+			'label'=>'Section 3',
+			'parent'=>'home_content',
+			'route'=>['index','edit'],
+			'controller'=>'\\App\\Http\\Controllers\\Admin\\Section3homeController',
+			'fa'=>'fa fa-gear'
+		],
+		'section4'=>[
+			'label'=>'Section 4',
+			'parent'=>'home_content',
+			'route'=>['index','edit'],
+			'controller'=>'\\App\\Http\\Controllers\\Admin\\Section4homeController',
+			'fa'=>'fa fa-gear'
+		]
 	// 	'home'=>[
 	// 		'label'=>'Home',
 	// 		'fa'=>'fa fa-home',
@@ -328,5 +361,5 @@ return[
 		// 	'controller'=>'\\App\\Http\\Controllers\\Admin\\ArticleController',
 		// 	'fa'=>'fa fa-drivers-license',
 		// ]
-	//]
+	]
 ];

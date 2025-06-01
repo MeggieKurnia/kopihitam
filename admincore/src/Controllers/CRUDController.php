@@ -874,6 +874,7 @@ class CRUDController extends Controller{
 				}else{
 					$model = $this->model::where($key->getKeyName(),$id);
 					$data = $model->first()->toArray();
+					$data['widget'] = $widget = $this->_cekWidget($id);
 					$this->form = array_merge($this->form($id),['dataFormxxx'=>$data,'pkKey'=>$id]);
 				}
 				return response()->json(['form'=>$this->form,'script'=>method_exists($this,'_script') ? $this->_script() : null],200);
@@ -1064,6 +1065,9 @@ class CRUDController extends Controller{
 								$model->{$key} = $id;
 								$model->exists = true;
 								$edit = $model->save();
+
+								if(request()->has('widget'))
+									$this->_saveWidget(request()->only('widget'),$id,'edit');
 							}
 							return response()->json(['status'=>'ok','msg'=>'Update Successfully'],200);
 						}else{

@@ -10,27 +10,6 @@
 <title>Data Driven Growth Marketing Agency | LOPOKOPI.CO</title><link rel="preload" data-rocket-preload as="image" href={{asset("wp-content/uploads/2024/03/Logo-LOPOKOPI-CO-Horizontal-LOGO-200x43.png")}} imagesrcset="https://lopokopi.co/wp-content/uploads/2024/03/Logo-LOPOKOPI-CO-Horizontal-LOGO-200x43.png 200w,https://lopokopi.co/wp-content/uploads/2024/03/Logo-LOPOKOPI-CO-Horizontal-LOGO-300x64.png.webp 300w,https://lopokopi.co/wp-content/uploads/2024/03/Logo-LOPOKOPI-CO-Horizontal-LOGO-1024x220.png.webp 1024w,https://lopokopi.co/wp-content/uploads/2024/03/Logo-LOPOKOPI-CO-Horizontal-LOGO-768x165.png.webp 768w,https://lopokopi.co/wp-content/uploads/2024/03/Logo-LOPOKOPI-CO-Horizontal-LOGO-1536x330.png.webp 1536w,https://lopokopi.co/wp-content/uploads/2024/03/Logo-LOPOKOPI-CO-Horizontal-LOGO-2048x440.png.webp 2048w" imagesizes="(max-width: 200px) 100vw, 200px" fetchpriority="high">
 <meta name="description" content="Unlock Massive Growth with Marketing Agency to Hit Your Business Goals through Paid Ads, CPAs, and More!"/>
 <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"/>
-<meta property="og:locale" content="en_US" />
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Data Driven Growth Marketing Agency | LOPOKOPI.CO" />
-<meta property="og:description" content="Unlock Massive Growth with Marketing Agency to Hit Your Business Goals through Paid Ads, CPAs, and More!" />
-<meta property="og:url" content="https://lopokopi.co/" />
-<meta property="og:site_name" content="LOPOKOPI.CO" />
-<meta property="og:updated_time" content="2025-05-26T17:17:22+07:00" />
-<meta property="og:image" content="https://lopokopi.co/wp-content/uploads/2024/03/Logo-LOPOKOPI-CO-Horizontal-LOGO-1024x220.png" />
-<meta property="og:image:secure_url" content="https://lopokopi.co/wp-content/uploads/2024/03/Logo-LOPOKOPI-CO-Horizontal-LOGO-1024x220.png" />
-<meta property="og:image:width" content="1024" />
-<meta property="og:image:height" content="220" />
-<meta property="og:image:alt" content="Lopokopi Logo" />
-<meta property="og:image:type" content="image/png" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Data Driven Growth Marketing Agency | LOPOKOPI.CO" />
-<meta name="twitter:description" content="Unlock Massive Growth with Marketing Agency to Hit Your Business Goals through Paid Ads, CPAs, and More!" />
-<meta name="twitter:image" content="https://lopokopi.co/wp-content/uploads/2024/03/Logo-LOPOKOPI-CO-Horizontal-LOGO-1024x220.png" />
-<meta name="twitter:label1" content="Written by" />
-<meta name="twitter:data1" content="Adit Bima" />
-<meta name="twitter:label2" content="Time to read" />
-<meta name="twitter:data2" content="1 minute" />
 <script type="application/ld+json" class="rank-math-schema-pro">{"@context":"https://schema.org","@graph":[{"@type":"Place","@id":"https://lopokopi.co/#place","address":{"@type":"PostalAddress","streetAddress":"Teras Yasmin, Jl. KH. R. Abdullah Bin Nuh No.33 - 35 Lantai 2","addressLocality":"RT.10/RW.08, Curugmekar, Kec. Bogor Barat","addressRegion":"Kota Bogor, Jawa Barat","postalCode":"16113","addressCountry":"Indonesia"}},{"@type":["ProfessionalService","Organization"],"@id":"https://lopokopi.co/#organization","name":"LOPOKOPI.CO","url":"https://lopokopi.co","sameAs":["https://www.facebook.com/lopokopi.co","https://www.instagram.com/lopokopi.co","https://id.linkedin.com/company/lopokopi-co","https://www.youtube.com/@lopokopico","https://www.tiktok.com/@lopokopi.co"],"email":"lopokopi.digital@gmail.com","address":{"@type":"PostalAddress","streetAddress":"Teras Yasmin, Jl. KH. R. Abdullah Bin Nuh No.33 - 35 Lantai 2","addressLocality":"RT.10/RW.08, Curugmekar, Kec. Bogor Barat","addressRegion":"Kota Bogor, Jawa Barat","postalCode":"16113","addressCountry":"Indonesia"},"logo":{"@type":"ImageObject","@id":"https://lopokopi.co/#logo","url":"https://lopokopi.co/wp-content/uploads/2024/03/Logo-LOPOKOPI-CO-Horizontal-LOGO.png","contentUrl":"https://lopokopi.co/wp-content/uploads/2024/03/Logo-LOPOKOPI-CO-Horizontal-LOGO.png","caption":"LOPOKOPI.CO","inLanguage":"en-US","width":"2560","height":"550"},"openingHours":["Monday,Tuesday,Wednesday,Thursday,Friday 09:00-18:00"],"location":{"@id":"https://lopokopi.co/#place"},"image":{"@id":"https://lopokopi.co/#logo"}},{"@type":"WebSite","@id":"https://lopokopi.co/#website","url":"https://lopokopi.co","name":"LOPOKOPI.CO","publisher":{"@id":"https://lopokopi.co/#organization"},"inLanguage":"en-US","potentialAction":{"@type":"SearchAction","target":"https://lopokopi.co/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"ImageObject","@id":"https://lopokopi.co/wp-content/uploads/2023/06/Partnership-2.png","url":"https://lopokopi.co/wp-content/uploads/2023/06/Partnership-2.png","width":"200","height":"200","inLanguage":"en-US"},{"@type":"WebPage","@id":"https://lopokopi.co/#webpage","url":"https://lopokopi.co/","name":"Data Driven Growth Marketing Agency | LOPOKOPI.CO","datePublished":"2025-01-03T13:33:38+07:00","dateModified":"2025-05-26T17:17:22+07:00","about":{"@id":"https://lopokopi.co/#organization"},"isPartOf":{"@id":"https://lopokopi.co/#website"},"primaryImageOfPage":{"@id":"https://lopokopi.co/wp-content/uploads/2023/06/Partnership-2.png"},"inLanguage":"en-US"}]}</script>
 <meta name="google-site-verification" content="google86f613c1fc1fda30" />
 <!-- /Rank Math WordPress SEO plugin -->
@@ -194,11 +173,7 @@ flexibility(document.documentElement);</script>
 <link rel='shortlink' href='index.html' />
 <!-- HFCM by 99 Robots - Snippet # 3: Google Tag Manager Header -->
 <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-W9XLTSV');</script>
+
 <!-- End Google Tag Manager -->
 <!-- /end HFCM by 99 Robots -->
 <meta name="generator" content="Elementor 3.29.0; features: e_font_icon_svg, e_local_google_fonts; settings: css_print_method-external, google_font-enabled, font_display-auto">
