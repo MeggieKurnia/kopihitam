@@ -26,6 +26,12 @@ class HomeController extends Controller
         if($sec4 != null){
             $ws4 = widget('section4','image',$sec4->id);
         }
-        return view('fe.home',compact('section2','widgetSec2','sec3','ws3','sec4','ws4'));
+
+        $sec5 = \App\Models\Section5home::whereIsActive(1)->first();
+        $ws5 = null;
+        if($sec5 != null){
+            $ws5 = widget('section5','image',$sec5->id);
+        }
+        return view('fe.home',compact('section2','widgetSec2','sec3','ws3','sec4','ws4','sec5','ws5'));
     }
 }

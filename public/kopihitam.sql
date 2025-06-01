@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 01, 2025 at 02:48 PM
+-- Generation Time: Jun 01, 2025 at 03:09 PM
 -- Server version: 8.0.31-0ubuntu0.22.04.1
 -- PHP Version: 8.3.20
 
@@ -104,7 +104,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (7, '2022_03_30_151448_create_menus', 1),
 (8, '2025_05_31_173108_create_section2_home', 2),
 (9, '2025_05_31_184029_create_section3_home', 3),
-(10, '2025_05_31_202740_create_section4_home', 4);
+(10, '2025_05_31_202740_create_section4_home', 4),
+(11, '2025_06_01_145955_create_sec5home', 5);
 
 -- --------------------------------------------------------
 
@@ -199,6 +200,27 @@ INSERT INTO `section4_home` (`id`, `title`, `is_active`, `created_at`, `updated_
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `section5_home`
+--
+
+CREATE TABLE `section5_home` (
+  `id` bigint UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_active` int NOT NULL DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `section5_home`
+--
+
+INSERT INTO `section5_home` (`id`, `title`, `is_active`, `created_at`, `updated_at`) VALUES
+(1, 'Helping 100+ <b>Clients Grow Online</b>', 1, '2025-06-01 08:05:30', '2025-06-01 08:05:30');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `settings`
 --
 
@@ -286,7 +308,8 @@ INSERT INTO `widgets` (`id`, `base_id`, `module`, `name`, `sequence`, `is_active
 (27, 1, 'section3', 'image', '2025-05-31 19:48:56', 1, NULL, NULL),
 (28, 1, 'section3', 'image', '2025-05-31 19:48:56', 1, NULL, NULL),
 (29, 1, 'section4', 'image', '2025-05-31 20:35:01', 1, NULL, NULL),
-(30, 1, 'section4', 'image', '2025-05-31 20:35:01', 1, NULL, NULL);
+(30, 1, 'section4', 'image', '2025-05-31 20:35:01', 1, NULL, NULL),
+(31, 1, 'section5', 'image', '2025-06-01 15:05:30', 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -351,7 +374,8 @@ INSERT INTO `widget_value` (`id`, `widget_id`, `lang`, `key`, `value`, `created_
 (87, 30, NULL, 'box2_title', 'fsdfsad', NULL, NULL),
 (88, 30, NULL, 'box2_persen', '5%', NULL, NULL),
 (89, 30, NULL, 'box3_title', 'gsdgs', NULL, NULL),
-(90, 30, NULL, 'box3_persen', '6%', NULL, NULL);
+(90, 30, NULL, 'box3_persen', '6%', NULL, NULL),
+(91, 31, NULL, 'images', 'files/news-1.png', NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -414,6 +438,12 @@ ALTER TABLE `section4_home`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `section5_home`
+--
+ALTER TABLE `section5_home`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `settings`
 --
 ALTER TABLE `settings`
@@ -465,7 +495,7 @@ ALTER TABLE `menus_lang`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `privillage`
@@ -492,6 +522,12 @@ ALTER TABLE `section4_home`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `section5_home`
+--
+ALTER TABLE `section5_home`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `settings`
 --
 ALTER TABLE `settings`
@@ -507,13 +543,13 @@ ALTER TABLE `user_cms`
 -- AUTO_INCREMENT for table `widgets`
 --
 ALTER TABLE `widgets`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `widget_value`
 --
 ALTER TABLE `widget_value`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
 
 --
 -- Constraints for dumped tables

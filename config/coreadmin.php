@@ -82,6 +82,13 @@ return[
 			'route'=>['index','edit'],
 			'controller'=>'\\App\\Http\\Controllers\\Admin\\Section4homeController',
 			'fa'=>'fa fa-gear'
+		],
+		'section5'=>[
+			'label'=>'Section 5',
+			'parent'=>'home_content',
+			'route'=>['create','index','edit'],
+			'controller'=>'\\App\\Http\\Controllers\\Admin\\Section5homeController',
+			'fa'=>'fa fa-gear'
 		]
 	// 	'home'=>[
 	// 		'label'=>'Home',
