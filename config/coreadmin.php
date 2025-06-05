@@ -35,13 +35,13 @@ return[
 			'controller'=>'\AdminApp\\Controllers\\SettingController',
 			'fa'=>'fa fa-gear'
 		],
-		// 'localization'=>[
-		// 	'label'=>'Localization',
-		// 	'parent'=>'website-setting',
-		// 	'route'=>['setting'],
-		// 	'controller'=>'\\App\\Http\\Controllers\\Admin\\LocalizationController',
-		// 	'fa'=>'fa fa-gear'
-		// ],
+		'localization'=>[
+			'label'=>'Localization',
+			'parent'=>'website-setting',
+			'route'=>['setting'],
+			'controller'=>'\\App\\Http\\Controllers\\Admin\\LocalizationController',
+			'fa'=>'fa fa-gear'
+		],
 		// 'tes'=>[
 		// 	'label'=>'Tes',
 		// 	'parent'=>'website-setting',
@@ -62,10 +62,17 @@ return[
 			'fa'=>'fa fa-gear'
 		],
 		'price'=>[
-			'label'=>'Price',
+			'label'=>'Price PT',
 			'parent'=>'home_content',
 			'route'=>['index','edit'],
 			'controller'=>'\\App\\Http\\Controllers\\Admin\\PriceController',
+			'fa'=>'fa fa-money'
+		],
+		'price_cv'=>[
+			'label'=>'Price CV',
+			'parent'=>'home_content',
+			'route'=>['create','index','edit','delete'],
+			'controller'=>'\\App\\Http\\Controllers\\Admin\\PricecvController',
 			'fa'=>'fa fa-money'
 		],
 		// 'section2'=>[

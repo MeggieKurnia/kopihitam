@@ -5,7 +5,7 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
 
-      <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+      <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="" data-bs-interval="5000">
 
         <div class="carousel-item active">
           <img src="{{asset('assets/img/hero-carousel/hero-carousel-1.jpg')}}" alt="">
@@ -25,90 +25,102 @@
 
     </section><!-- /Hero Section -->
 
+    <!-- Pricing Section -->
     <section id="pricing" class="pricing section">
 
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2 style="font-size: 28px !important; font-weight: bold !important;">{{\App\Helper::getSetting('localization','paket_pt')}}</h2>
+      </div><!-- End Section Title -->
+
       <div class="container">
-        <div class="row" style="margin-bottom: 50px;">
-          <div class="col-xs-1" align="center">
-            <h2>Price</h2>
-          </div>
-        </div>
+
         <div class="row gy-3">
-
+          @foreach($price as $p)
           <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="pricing-item">
-              <h3>Free</h3>
-              <h4><sup>$</sup>0<span> / month</span></h4>
+            <div class="pricing-item @if($p->is_unggulan) featured @endif">
+              @if($p->is_advance)
+                <span class="advanced">Advanced</span>
+              @endif
+              <h3>{{$p->title}}</h3>
+              @if($p->harga_coret)
+              <h6 class="price-strike">
+                {!! $p->harga_coret !!}
+              </h6>
+              @endif
+              <h4>{!! $p->harga !!}</h4>
+              @php
+                $w = widget('price','item',$p->id);
+                if(count($w)){
+              @endphp
               <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li class="na">Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
+                @foreach($w as $l)
+                    <li>{{$l['items']}}</li>
+                @endforeach
               </ul>
+              @php } @endphp
               <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
+                <a href="{{$p->link_buy}}" target="_blank" class="btn-buy">{{\App\Helper::getSetting('localization','buy_now')}}</a>
               </div>
             </div>
           </div><!-- End Pricing Item -->
-
-          <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="pricing-item featured">
-              <h3>Business</h3>
-              <h4><sup>$</sup>19<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div><!-- End Pricing Item -->
-
-          <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="pricing-item">
-              <h3>Developer</h3>
-              <h4><sup>$</sup>29<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li>Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div><!-- End Pricing Item -->
-
-          <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="pricing-item">
-              <span class="advanced">Advanced</span>
-              <h3>Ultimate</h3>
-              <h4><sup>$</sup>49<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li>Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div><!-- End Pricing Item -->
+          @endforeach
 
         </div>
 
       </div>
 
-    </section>
+    </section><!-- /Pricing Section -->
+
+
+    <!-- Pricing 2 Section -->
+    <section id="pricing" class="pricing section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2 style="font-size: 28px !important; font-weight: bold !important;">{{\App\Helper::getSetting('localization','paket_cv')}}</h2>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-3">
+          @foreach($pricecv as $pc)
+          <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="pricing-item @if($p->is_unggulan) featured @endif">
+              @if($pc->is_advance)
+                <span class="advanced">Advanced</span>
+              @endif
+              <h3>{{$pc->title}}</h3>
+              @if($pc->harga_coret)
+              <h6 class="price-strike">
+                {!! $pc->harga_coret !!}
+              </h6>
+              @endif
+              <h4>{!! $pc->harga !!}</h4>
+              @php
+                $wc = widget('price_cv','item',$pc->id);
+                if(count($wc)){
+              @endphp
+              <ul>
+                @foreach($wc as $lc)
+                    <li>{{$lc['items']}}</li>
+                @endforeach
+              </ul>
+              @php } @endphp
+              <div class="btn-wrap">
+                <a href="{{$pc->link_buy}}" target="_blank" class="btn-buy">{{\App\Helper::getSetting('localization','buy_now')}}</a>
+              </div>
+            </div>
+          </div><!-- End Pricing Item -->
+          @endforeach
+
+        </div>
+
+      </div>
+
+    </section><!-- /Pricing 2 Section -->
+
+    
 
     <!-- Clients Section -->
     <section id="clients" class="clients section light-background">

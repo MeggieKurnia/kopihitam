@@ -2,11 +2,10 @@
 namespace App\Http\Controllers\Admin;
 
 use AdminApp\Controllers\CRUDController;
-use App\Models\Projectbisnis;
 
-class PriceController extends CRUDController{ 
+class PricecvController extends CRUDController{ 
 
-	public $model = '\App\Models\Price';
+	public $model = '\App\Models\Pricecv';
 	public $header = ['title'=>'Title','is_active'=>'Active'];
 	//public $orderBy = ['created_at'=>'desc'];
 

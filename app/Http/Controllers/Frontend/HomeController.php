@@ -9,29 +9,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $section2 = \App\Models\Section2home::whereIsActive(1)->first();
-        $widgetSec2 = null;
-        if($section2 != null){
-            $widgetSec2 = widget('section2','image',$section2->id);
-        }
-
-        $sec3 = \App\Models\Section3home::whereIsActive(1)->first();
-        $ws3 = null;
-        if($sec3 != null){
-            $ws3 = widget('section3','image',$sec3->id);
-        }
-
-        $sec4 = \App\Models\Section4home::whereIsActive(1)->first();
-        $ws4 = null;
-        if($sec4 != null){
-            $ws4 = widget('section4','image',$sec4->id);
-        }
-
-        $sec5 = \App\Models\Section5home::whereIsActive(1)->first();
-        $ws5 = null;
-        if($sec5 != null){
-            $ws5 = widget('section5','image',$sec5->id);
-        }
-        return view('fe.home',compact('section2','widgetSec2','sec3','ws3','sec4','ws4','sec5','ws5'));
+        $price = \App\Models\Price::whereIsActive(1)->get();
+        $pricecv = \App\Models\Pricecv::whereIsActive(1)->get();
+        return view('fe.home',compact('price','pricecv'));
     }
 }
