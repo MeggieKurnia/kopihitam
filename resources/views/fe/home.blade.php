@@ -5,7 +5,7 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
 
-      <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+      <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="" data-bs-interval="5000">
 
         <div class="carousel-item active">
           <img src="{{asset('assets/img/hero-carousel/hero-carousel-1.jpg')}}" alt="">
@@ -14,16 +14,16 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             <a href="#featured-services" class="btn-get-started">Get Started</a>
           </div>
-        </div><!-- End Carousel Item -->
+        </div>
 
-        <div class="carousel-item">
+        {{-- <div class="carousel-item">
           <img src="{{asset('assets/img/hero-carousel/hero-carousel-2.jpg')}}" alt="">
           <div class="carousel-container">
             <h2>At vero eos et accusamus</h2>
             <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut.</p>
             <a href="#featured-services" class="btn-get-started">Get Started</a>
           </div>
-        </div><!-- End Carousel Item -->
+        </div>
 
         <div class="carousel-item">
           <img src="{{asset('assets/img/hero-carousel/hero-carousel-3.jpg')}}" alt="">
@@ -32,29 +32,141 @@
             <p>Beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt omnis iste natus error sit voluptatem accusantium.</p>
             <a href="#featured-services" class="btn-get-started">Get Started</a>
           </div>
-        </div><!-- End Carousel Item -->
+        </div> --}}
 
-        <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+        {{-- <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
           <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
         </a>
 
         <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
           <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-        </a>
+        </a> --}}
 
-        <ol class="carousel-indicators"></ol>
+        {{-- <ol class="carousel-indicators"></ol> --}}
 
       </div>
 
     </section><!-- /Hero Section -->
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2 style="font-size: 28px !important; font-weight: bold !important;">Paket Pendirian PT</h2>
+        {{-- <p class="container section-title" data-aos="fade-up">About Us<br></p> --}}
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-3">
+
+          <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="pricing-item">
+              <h3>Free</h3>
+              <h4><sup>$</sup>0<span> / month</span></h4>
+              <ul>
+                <li>Aida dere</li>
+                <li>Nec feugiat nisl</li>
+                <li>Nulla at volutpat dola</li>
+                <li class="na">Pharetra massa</li>
+                <li class="na">Massa ultricies mi</li>
+              </ul>
+              <div class="btn-wrap">
+                <a href="#" class="btn-buy">Buy Now</a>
+              </div>
+            </div>
+          </div><!-- End Pricing Item -->
+
+          <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="pricing-item featured">
+              <h3>Business</h3>
+              {{-- <h4 style="">
+                <span style="font-size: 36px; font-weight: 600; color: #556270; text-decoration: line-through; display: inline-block;">6.5</span>
+                <span style="">jt</span>
+              </h4> --}}
+
+              <h4 style="">
+                <span style="font-size: 36px; font-weight: 600; color: #556270; position: relative; display: inline-block;">
+                  6.5
+                  <span style="
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 50%;
+                    height: 3px;
+                    background-color: red;
+                    transform: translateY(-50%);
+                    z-index: 1;
+                    pointer-events: none;
+                    display: block;
+                  "></span>
+                </span>
+                <span>jt</span>
+              </h4>
+              
+              <ul>
+                <li>Aida dere</li>
+                <li>Nec feugiat nisl</li>
+                <li>Nulla at volutpat dola</li>
+                <li>Pharetra massa</li>
+                <li class="na">Massa ultricies mi</li>
+              </ul>
+              <div class="btn-wrap">
+                <a href="#" class="btn-buy">Buy Now</a>
+              </div>
+            </div>
+          </div><!-- End Pricing Item -->
+
+          <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="pricing-item">
+              <h3>Developer</h3>
+              <h4><sup>$</sup>29<span> / month</span></h4>
+              <ul>
+                <li>Aida dere</li>
+                <li>Nec feugiat nisl</li>
+                <li>Nulla at volutpat dola</li>
+                <li>Pharetra massa</li>
+                <li>Massa ultricies mi</li>
+              </ul>
+              <div class="btn-wrap">
+                <a href="#" class="btn-buy">Buy Now</a>
+              </div>
+            </div>
+          </div><!-- End Pricing Item -->
+
+          <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="pricing-item">
+              <span class="advanced">Advanced</span>
+              <h3>Ultimate</h3>
+              <h4><sup>$</sup>49<span> / month</span></h4>
+              <ul>
+                <li>Aida dere</li>
+                <li>Nec feugiat nisl</li>
+                <li>Nulla at volutpat dola</li>
+                <li>Pharetra massa</li>
+                <li>Massa ultricies mi</li>
+              </ul>
+              <div class="btn-wrap">
+                <a href="#" class="btn-buy">Buy Now</a>
+              </div>
+            </div>
+          </div><!-- End Pricing Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Pricing Section -->
 
     <!-- About Section -->
     <section id="about" class="about section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>About</h2>
-        <p>About Us<br></p>
+        <h2 >About</h2>
+        <p class="container section-title" data-aos="fade-up">About Us<br></p>
       </div><!-- End Section Title -->
 
       <div class="container">

@@ -34,6 +34,15 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <style>
+  .strike {
+    text-decoration: line-through;
+  }
+
+  .no-strike {
+    text-decoration: none;
+  }
+</style>
 </head>
 
 <body class="index-page">
@@ -48,12 +57,18 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#hero" class="active">Home</a></li>
-          <li class="dropdown"><a href="about.html"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li><a href="#hero" class="active">Beranda</a></li>
+          <li class="dropdown"><a href="about.html"><span>Layanan</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="team.html">Team</a></li>
-              <li><a href="testimonials.html">Testimonials</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <li><a href="team.html">Pendirian PT</a></li>
+              <li><a href="testimonials.html">Pendirian PT Perorangan</a></li>
+              <li><a href="testimonials.html">Pendirian CV</a></li>
+              <li><a href="testimonials.html">Pendirian Firma</a></li>
+              <li><a href="testimonials.html">Pendirian PMA</a></li>
+              <li><a href="testimonials.html">Pendirian Persekutuan Perdata</a></li>
+
+              {{-- Multi dropdown --}}
+              {{-- <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
                   <li><a href="#">Deep Dropdown 1</a></li>
                   <li><a href="#">Deep Dropdown 2</a></li>
@@ -61,14 +76,14 @@
                   <li><a href="#">Deep Dropdown 4</a></li>
                   <li><a href="#">Deep Dropdown 5</a></li>
                 </ul>
-              </li>
+              </li> --}}
+              {{-- End of Multi dropdown --}}
+
             </ul>
           </li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="services.html">Tentang Kami</a></li>
+          <li><a href="portfolio.html">Kontak Kami</a></li>
+          <li><a href="pricing.html">Artikel</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
