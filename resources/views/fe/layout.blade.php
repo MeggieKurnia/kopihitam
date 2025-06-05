@@ -4,13 +4,20 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Kopi Hita,</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title>{{$meta['meta_title']}}</title>
+  <meta name="description" content="{{$meta['meta_desc']}}">
+  <meta name="keywords" content="{{$meta['meta_keyword']}}">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{$meta['meta_title']}}">
+  <meta name="twitter:description" content="{{$meta['meta_desc']}}">
+  <meta name="twitter:image" content="{{$meta['meta_img']}}">
+  <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+  <link rel='canonical' href="{{request()->fullUrl()}}" />
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="icon" type="image/png" href="{{asset(\App\Helper::getSetting('setting','favicon'))}}"/>
+  <link href="{{asset(\App\Helper::getSetting('setting','favicon'))}}" rel="apple-touch-icon">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -27,14 +34,6 @@
   <!-- Main CSS File -->
   <link href="{{asset('assets/css/main.css')}}" rel="stylesheet">
   <link href="{{asset('assets/css/kopihitam.css')}}" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Sailor
-  * Template URL: https://bootstrapmade.com/sailor-free-bootstrap-theme/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
   <style>
   .strike {
     text-decoration: line-through;
@@ -50,10 +49,9 @@
 	<header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto">
+      <a href="{{url('/')}}" class="logo d-flex align-items-center me-auto">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">Sailor</h1>
+        <img src="{{\App\Helper::getSetting('setting','logo')}}" alt="">
       </a>
 
       <nav id="navmenu" class="navmenu">

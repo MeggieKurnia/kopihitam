@@ -38,9 +38,10 @@ if(!function_exists('urlTrans')){
 
 if(!function_exists('getDefaultMeta')){
     function getDefaultMeta() {
-        $mt = \App\Helper::getSetting('setting','meta_title',app()->getLocale()) ?? '-';
-        $md = \App\Helper::getSetting('setting','meta_desc',app()->getLocale()) ?? '-';
+        $mt = \App\Helper::getSetting('setting','meta_title') ?? '-';
+        $md = \App\Helper::getSetting('setting','meta_desc') ?? '-';
+        $mk = \App\Helper::getSetting('setting','meta_keyword') ?? '-';
         $img = \App\Helper::getSetting('setting','meta_img') ?? '-';
-        return ['meta_title' => $mt,'meta_desc' => $md,'meta_img'=>$img];
+        return ['meta_title' => $mt,'meta_desc' => $md,'meta_img'=>$img,'meta_keyword'=>$mk];
     }
 }

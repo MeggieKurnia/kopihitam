@@ -11,6 +11,8 @@ class HomeController extends Controller
     {
         $price = \App\Models\Price::whereIsActive(1)->get();
         $pricecv = \App\Models\Pricecv::whereIsActive(1)->get();
+        $meta = $meta = getDefaultMeta();
+        view()->share('meta',$meta);
         return view('fe.home',compact('price','pricecv'));
     }
 }
