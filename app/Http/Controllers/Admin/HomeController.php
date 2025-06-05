@@ -9,52 +9,31 @@ class HomeController extends CRUDController{
 
 	function form(){
 		return[
-			'title_video'=>[
-				'type'=>'text',
-				'label'=>'Title Video',
-				'value'=>Helper::getSetting('home','title_video'),
-			],
-			'intro_video'=>[
-				'type'=>'text',
-				'label'=>'Intro Video',
+			'images'=>[
+				'type'=>'image',
+				'label'=>'Images',
 				'required'=>true,
-				'value'=>Helper::getSetting('home','intro_video'),
+				'info'=>'Image Recomended 1920px x 1128px'
 			],
-			'link_youtube'=>[
+			'title'=>[
 				'type'=>'text',
-				'required'=>true,
-				'label'=>'Video ID Youtube',
-				'value'=>Helper::getSetting('home','link_youtube'),
+				'label'=>'Title',
+				'value'=>Helper::getSetting('home','title'),
 			],
-			'text1'=>[
+			'intro'=>[
 				'type'=>'text',
-				'label'=>'Text Discover',
-				'value'=>Helper::getSetting('home','text1')
+				'label'=>'Intro',
+				'value'=>Helper::getSetting('home','intro'),
 			],
-			'text2'=>[
+			'text_link'=>[
 				'type'=>'text',
-				'label'=>'Text Click Here',
-				'value'=>Helper::getSetting('home','text2')
+				'label'=>'Text Link',
+				'value'=>Helper::getSetting('home','text_link'),
 			],
-
-			'value'=>[
-				'type'=>'widget',
-				'label'=>'Widget Value',
-				'max'=>4,
-				'data'=>[
-					[
-						'val'=>[
-							'type'=>'text',
-							'label'=>'Value',
-							'required'=>true
-						],
-						'intro'=>[
-							'type'=>'text',
-							'label'=>'Intro',
-							'multilang'=>true
-						]
-					]
-				]
+			'link'=>[
+				'type'=>'text',
+				'label'=>'Link',
+				'value'=>Helper::getSetting('home','link'),
 			],
 					
 		];

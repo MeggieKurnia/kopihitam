@@ -61,35 +61,41 @@ return[
 			'controller'=>'\\App\\Http\\Controllers\\Admin\\HomeController',
 			'fa'=>'fa fa-gear'
 		],
-
-		'section2'=>[
-			'label'=>'Section 2',
+		'price'=>[
+			'label'=>'Price',
 			'parent'=>'home_content',
 			'route'=>['index','edit'],
-			'controller'=>'\\App\\Http\\Controllers\\Admin\\Section2homeController',
-			'fa'=>'fa fa-gear'
+			'controller'=>'\\App\\Http\\Controllers\\Admin\\PriceController',
+			'fa'=>'fa fa-money'
 		],
-		'section3'=>[
-			'label'=>'Section 3',
-			'parent'=>'home_content',
-			'route'=>['index','edit'],
-			'controller'=>'\\App\\Http\\Controllers\\Admin\\Section3homeController',
-			'fa'=>'fa fa-gear'
-		],
-		'section4'=>[
-			'label'=>'Section 4',
-			'parent'=>'home_content',
-			'route'=>['index','edit'],
-			'controller'=>'\\App\\Http\\Controllers\\Admin\\Section4homeController',
-			'fa'=>'fa fa-gear'
-		],
-		'section5'=>[
-			'label'=>'Section 5',
-			'parent'=>'home_content',
-			'route'=>['create','index','edit'],
-			'controller'=>'\\App\\Http\\Controllers\\Admin\\Section5homeController',
-			'fa'=>'fa fa-gear'
-		]
+		// 'section2'=>[
+		// 	'label'=>'Section 2',
+		// 	'parent'=>'home_content',
+		// 	'route'=>['index','edit'],
+		// 	'controller'=>'\\App\\Http\\Controllers\\Admin\\Section2homeController',
+		// 	'fa'=>'fa fa-gear'
+		// ],
+		// 'section3'=>[
+		// 	'label'=>'Section 3',
+		// 	'parent'=>'home_content',
+		// 	'route'=>['index','edit'],
+		// 	'controller'=>'\\App\\Http\\Controllers\\Admin\\Section3homeController',
+		// 	'fa'=>'fa fa-gear'
+		// ],
+		// 'section4'=>[
+		// 	'label'=>'Section 4',
+		// 	'parent'=>'home_content',
+		// 	'route'=>['index','edit'],
+		// 	'controller'=>'\\App\\Http\\Controllers\\Admin\\Section4homeController',
+		// 	'fa'=>'fa fa-gear'
+		// ],
+		// 'section5'=>[
+		// 	'label'=>'Section 5',
+		// 	'parent'=>'home_content',
+		// 	'route'=>['create','index','edit'],
+		// 	'controller'=>'\\App\\Http\\Controllers\\Admin\\Section5homeController',
+		// 	'fa'=>'fa fa-gear'
+		// ]
 	// 	'home'=>[
 	// 		'label'=>'Home',
 	// 		'fa'=>'fa fa-home',
