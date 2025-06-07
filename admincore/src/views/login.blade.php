@@ -71,9 +71,7 @@
           </fieldset>
         </form>
         <div class="copyrights text-center">
-        <p>CMS © Copyright {{date('Y')}}.<a href="#" class="external"></a></p>
-
-      <img style="width: 95px; text-align: center;" src="{{asset('admin_assets/logo-webzoic-qanelas-white.png')}}">
+        
         </div>
 
       </div> <!-- end login -->

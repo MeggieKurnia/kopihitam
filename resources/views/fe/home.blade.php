@@ -8,7 +8,7 @@
       <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="" data-bs-interval="5000">
 
         <div class="carousel-item active">
-          <img src="{{asset('assets/img/hero-carousel/hero-carousel-1.jpg')}}" alt="">
+          <img src="{{asset(\App\Helper::getSetting('home','images'))}}" alt="">
           <div class="carousel-container">
             @if(\App\Helper::getSetting('home','title'))
             <h2>{{\App\Helper::getSetting('home','title')}}</h2>

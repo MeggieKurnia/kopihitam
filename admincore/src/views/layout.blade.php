@@ -198,8 +198,7 @@
         <footer class="footer">
           <div class="footer__block block no-margin-bottom">
             <div class="container-fluid text-center">
-              <p>CMS © Copyright {{date('Y')}}. &nbsp;<a href="#" class="external"></a>
-              <img style="width: 95px; text-align: center;" src="{{asset('admin_assets/logo-webzoic-qanelas-white.png')}}"></p>
+              
             </div>
           </div>
         </footer>
