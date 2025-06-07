@@ -34,6 +34,29 @@ class SettingController extends CRUDController{
 				'info'=>'size:168*40px',
 			    'required'=>true
 			],
+
+			'sosmed_tw'=>[
+				'type'=>'text',
+				'label'=>'Link Twitter'
+			],
+			'sosmed_fb'=>[
+				'type'=>'text',
+				'label'=>'Link Facebook'
+			],
+			'sosmed_ig'=>[
+				'type'=>'text',
+				'label'=>'Link Instagram'
+			],
+			'sosmed_in'=>[
+				'type'=>'text',
+				'label'=>'Link Linkedin'
+			],
+
+			'copyright'=>[
+				'type'=>'text',
+				'label'=>'Copyright'
+			],
+
 			'meta_title'=>[
 				'type'=>'text',
 				'label'=>'Meta Title (Default)',

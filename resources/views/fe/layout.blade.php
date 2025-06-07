@@ -53,36 +53,46 @@
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <img src="{{\App\Helper::getSetting('setting','logo')}}" alt="">
       </a>
-
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#hero" class="active">Beranda</a></li>
-          <li class="dropdown"><a href="about.html"><span>Layanan</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="team.html">Pendirian PT</a></li>
-              <li><a href="testimonials.html">Pendirian PT Perorangan</a></li>
-              <li><a href="testimonials.html">Pendirian CV</a></li>
-              <li><a href="testimonials.html">Pendirian Firma</a></li>
-              <li><a href="testimonials.html">Pendirian PMA</a></li>
-              <li><a href="testimonials.html">Pendirian Persekutuan Perdata</a></li>
-
-              {{-- Multi dropdown --}}
-              {{-- <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li> --}}
-              {{-- End of Multi dropdown --}}
-
-            </ul>
-          </li>
-          <li><a href="services.html">Tentang Kami</a></li>
-          <li><a href="portfolio.html">Kontak Kami</a></li>
-          <li><a href="pricing.html">Artikel</a></li>
+          <li><a href="{{url('/')}}" class="">Beranda</a></li>
+          @php
+            $tmp = [];
+            $tmp2 = [];
+          @endphp
+          @foreach($menuMain as $m)
+            @if($m->template == 'service')
+              @php $tmp[$m->id] = $m; @endphp
+            @else
+              @php $tmp2[$m->id] = $m; @endphp
+            @endif
+            @if($m->is_parent == null)
+              @php $child = \App\Helper::getChildMenus($m->id); @endphp
+              <li class="{{ count($child) ? 'dropdown' : '' }}">
+                  <a href="{{ count($child) ? 'javascript:void(0)' : url($m->permalink) }}" class="{{$m->permalink == request()->segment(1) ? 'active' : ''}}">
+                    @if(count($child))
+                      <span>{{$m->label}}</span> <i class="bi bi-chevron-down toggle-dropdown"></i>
+                    @else
+                      {{$m->label}}
+                    @endif
+                  </a>
+                  @if(count($child))
+                    <ul>
+                        @foreach($child as $c)
+                          @if($c->template == 'service')
+                            @php $tmp[$c->id] = $c; @endphp
+                          @else
+                            @php $tmp2[$c->id] = $c; @endphp
+                          @endif
+                          <li>
+                            <a href="{{$c->permalink}}" class="{{$c->permalink == request()->segment(1) ? 'active' : ''}}">{{$c->label}}</a>
+                          </li>
+                        @endforeach
+                    </ul>
+                  @endif
+              </li>
+            @endif
+          @endforeach
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -95,44 +105,49 @@
   <footer id="footer" class="footer dark-background footer-color">
 
     <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">Sailor</span>
+      <div class="row gx-6">
+        <div class="col-lg-4 col-md- footer-about">
+          <a href="{{url('/')}}" class="logo d-flex align-items-center">
+            <img src="{{asset(\App\Helper::getSetting('setting','logo'))}}">
           </a>
           <div class="footer-contact pt-3">
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-            <p><strong>Email:</strong> <span>info@example.com</span></p>
+            <p>{!!\App\Helper::getSetting('contact','address')!!}</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>{{\App\Helper::getSetting('contact','phone')}}</span></p>
+            <p><strong>Email:</strong> <span>{{\App\Helper::getSetting('contact','email')}}</span></p>
           </div>
           <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
+            @if(\App\Helper::getSetting('setting','sosmed_tw'))
+            <a href="{{\App\Helper::getSetting('setting','sosmed_tw')}}" target="_blank"><i class="bi bi-twitter-x"></i></a>
+            @endif
+            @if(\App\Helper::getSetting('setting','sosmed_fb'))
+            <a href="{{\App\Helper::getSetting('setting','sosmed_fb')}}" target="_blank"><i class="bi bi-facebook"></i></a>
+            @endif
+            @if(\App\Helper::getSetting('setting','sosmed_ig'))
+            <a href="{{\App\Helper::getSetting('setting','sosmed_ig')}}" target="_blank"><i class="bi bi-instagram"></i></a>
+            @endif
+            @if(\App\Helper::getSetting('setting','sosmed_in'))
+            <a href="{{\App\Helper::getSetting('setting','sosmed_in')}}" target="_blank"><i class="bi bi-linkedin"></i></a>
+            @endif
           </div>
         </div>
 
-        <div class="col-lg-2 col-md-3 footer-links">
+        <div class="col-lg-2 col-md-6 footer-links">
           <h4>Useful Links</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
+            <li><a href="{{url('/')}}">Beranda</a></li>
+            @foreach($tmp2 as $t2)
+              @if($t2->permalink)
+                <li><a href="{{url($t2->permalink)}}">{{$t2->label}}</a></li>
+              @endif
+            @endforeach
           </ul>
         </div>
-
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Our Services</h4>
           <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
+            @foreach($tmp as $t)
+              <li><a href="{{url($t->permalink)}}">{{$t->label}}</a></li>
+            @endforeach
           </ul>
         </div>
 
@@ -149,18 +164,13 @@
 
       </div>
     </div>
-
+    @if(\App\Helper::getSetting('setting','copyright'))
     <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Sailor</strong> <span>All Rights Reserved</span></p>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href=“https://themewagon.com>ThemeWagon
-      </div>
+      <p>
+        {!! \App\Helper::getSetting('setting','copyright') !!}
+      </p>
     </div>
-
+    @endif
   </footer>
 
   <!-- Scroll Top -->

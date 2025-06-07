@@ -38,6 +38,9 @@ class Admin
                 }
               }
             }
+            if(request()->segment(3) == 'download'){
+                return $next($request);
+            }
             $response = $next($request);
             return $response->header('Cache-Control','no-cache, no-store, max-age=0, must-revalidate')
                 ->header('Access-Control-Allow-Origin', '*')

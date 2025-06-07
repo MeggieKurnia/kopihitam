@@ -186,6 +186,7 @@
 		window.generateForm = function(res){
 			var html = '';
 			$.each(res,function(key,val){
+				let kdf = key;
 				if(val['type'] == 'widget'){
 					if(typeof val['min'] !== 'undefined')
 						min[key] = val['min'];
@@ -265,7 +266,9 @@
 									});
 								}else{
 									$.each(val['option'], function(ok,ov){
-										html+='<option value="'+ok+'" '+( (typeof res['dataFormxxx'] !== 'undefined') ? res['dataFormxxx'][key] == ok ? 'selected' : '' : '')+'>'+ov+'</option>';
+										
+											html+='<option value="'+ok+'" '+( (typeof res['dataFormxxx'] !== 'undefined') ? res['dataFormxxx'][kdf] == ok ? 'selected' : '' : '')+'>'+ov+'</option>';
+										
 									});
 							 	}
 							}else{
@@ -354,15 +357,17 @@
 					$('.sc2x option:first').remove();
 					$('.sc2x').val('').trigger('change');
 					if(typeof res['dataFormxxx'] !== 'undefined'){
+
 						var nm = $('.sc2x').attr('name');
 						var r = nm.replaceAll('[]','');
 						var d = res['dataFormxxx'][r];
 						if(d){
+							let f = d.replaceAll("[","").replaceAll("]","").replaceAll('"',"");
 							$('.sc2x').select2({
 								multiple:true,
 								dropdownParent: $("#formAct .modal-content"),
 							  	containerCssClass: ':all:'
-							}).val(d.split(",")).trigger('change');
+							}).val(f.split(",")).trigger('change');
 						}else{
 							$('.sc2x').select2({
 								multiple:true,

@@ -7,5 +7,9 @@ class Price extends Model{
 
 	protected $table = 'price';
 
-	protected $fillable = ['title','is_active','is_unggulan','is_advance','harga_coret','harga','link_buy'];
+	protected $fillable = ['menus_id','title','is_active','is_unggulan','is_advance','harga_coret','harga','link_buy'];
+
+	public function menu(){
+		return $this->belongsTo(\App\Models\Menus::class,'menus_id','id');
+	}
 }

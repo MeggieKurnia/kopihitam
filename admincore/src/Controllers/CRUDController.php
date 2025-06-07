@@ -173,14 +173,14 @@ class CRUDController extends Controller{
 										if($type == 'object')
 											continue;
 										 //dd($q->{$v});
-										if($v == 'menuid'){
-											$m = \App\Models\MenusLang::select('menus_id')->where('label','LIKE','%'.$search.'%')->whereLang($defLang['default']);
+										if($v == 'id'){
+											$m = \App\Models\Menus::select('id')->where('label','LIKE','%'.$search.'%')->whereLang($defLang['default']);
 											$mid = [];
 											foreach($m->get()->toArray() as $w){
-												$mid[] = $w['menus_id'];
+												$mid[] = $w['id'];
 											}
 											if(count($mid))
-												$q1->whereIn('menuid',$mid);
+												$q1->whereIn('id',$mid);
 										}
 									    if(is_null($model->first()->{$v}))
 											$q1->orWhere($v,'LIKE','%'.$search.'%');
@@ -193,6 +193,9 @@ class CRUDController extends Controller{
 						});
 				$trans = true;
 			}else{
+				if(request()->segment(2) == 'menus'){
+					$select = array_merge($select,['id']);
+				}
 				$data = $model->select($select);
 			}
 			if(property_exists($this,'orderBy')){
@@ -314,11 +317,10 @@ class CRUDController extends Controller{
 			if(request()->segment(2) == 'menus'){
 				$res=[];
 				foreach ($result_data as $key => $value) {
-					foreach($value as $k => $v){
-						$l = count($value) - 1;
+					foreach($value as $k => $v){;
+						$l = count($value) - 2;
 						if($l == $k){
-							$end = end($value);
-							$ex = explode("&nbsp;",$end);
+							$ex = explode("&nbsp;",$v);
 							foreach($ex as $r){
 								if(strrpos($r,"delete/") !== false){
 									$pos = strrpos($r,"delete/") + 7;
@@ -372,7 +374,7 @@ class CRUDController extends Controller{
 										$callMethod = $this->callbackField((Object)$v,$ky,$vv);
 										if(empty($callMethod)){
 											if(request()->segment(2) == 'menus' && $kk == 'label'){
-												$child = \App\Models\Menus::where('is_parent',$gl['menus_id'])->orderBy('sequence_date','desc');
+												$child = \App\Models\Menus::where('is_parent',$gl['id'])->orderBy('sequence_date','desc');
 												if($child->count()){
 													$d = [];
 													foreach($child->get() as $cld){
@@ -393,7 +395,7 @@ class CRUDController extends Controller{
 														$tmpl = $cld->template ? \Config::get('template')[$cld->template] : '-';
 														$d[] = ['id'=>$cld->id,'template'=>$tmpl,'label'=>$trns->label,'banner'=>$cld->banner,'parent'=>$vv,'sequence'=>date('d M Y H:i:s',strtotime($cld->sequence_date)),'is_active'=>($cld->is_active ? 'True' : 'False'),'is_delete'=>(!$isDel ? true : false),'child'=>$p2];
 													}
-													$arr[]=$vv."<div style='display:inline-block; margin-left: 16px;' data='".json_encode($d)."' id='id_".$gl['menus_id']."' onclick='showChild(this)'><i class='fa fa-caret-right'></i></div>";
+													$arr[]=$vv."<div style='display:inline-block; margin-left: 16px;' data='".json_encode($d)."' id='id_".$gl['id']."' onclick='showChild(this)'><i class='fa fa-caret-right'></i></div>";
 												}else{
 													$arr[]=$vv;
 												}
@@ -448,7 +450,37 @@ class CRUDController extends Controller{
 				foreach($v as $r=>$g){
 					if(method_exists($this,'callbackField')){
 						$callMethod = $this->callbackField((Object)$v,$r,$g);
-						$arr[] = empty($callMethod) ? $g : $callMethod;
+						if(empty($callMethod)){
+							if(request()->segment(2) == 'menus' && $r == 'label'){
+								$child = \App\Models\Menus::where('is_parent',$v['id'])->orderBy('sequence_date','desc');
+								if($child->count()){
+									$d = [];
+									foreach($child->get() as $cld){
+										$p2 = null;
+										$c2 = \App\Models\Menus::where('is_parent',$cld->id)->orderBy('sequence_date','desc');
+										if($c2->count()){
+											$d2=[];
+											foreach($c2->get() as $cl2){
+												$isDel2 = \App\Helper::cekChildExist($cl2->id);
+												$tmpl2 = $cl2->template ? \Config::get('template')[$cl2->template] : '-';
+												$d2[]=['id'=>$cl2->id,'template'=>$tmpl2,'label'=>$cl2->label,'banner'=>$cl2->banner,'parent'=>$cl2->label,'sequence'=>date('d M Y H:i:s',strtotime($cl2->sequence_date)),'is_active'=>($cl2->is_active ? 'True' : 'False'),'is_delete'=>(!$isDel2 ? true : false) ];
+											}
+											$p2 = $d2;
+										}
+										$isDel = \App\Helper::cekChildExist($cld->id);
+										$tmpl = $cld->template ? \Config::get('template')[$cld->template] : '-';
+										$d[] = ['id'=>$cld->id,'template'=>$tmpl,'label'=>$cld->label,'banner'=>$cld->banner,'parent'=>$g,'sequence'=>date('d M Y H:i:s',strtotime($cld->sequence_date)),'is_active'=>($cld->is_active ? 'True' : 'False'),'is_delete'=>(!$isDel ? true : false),'child'=>$p2];
+									}
+									$arr[]=$g."<div style='display:inline-block; margin-left: 16px;' data='".json_encode($d)."' id='id_".$v['id']."' onclick='showChild(this)'><i class='fa fa-caret-right'></i></div>";
+								}else{
+									$arr[]=$g;
+								}
+							}else{
+								$arr[]=$g;
+							}
+						}else{
+							$arr[] = $callMethod;
+						}
 					}else{
 						$arr[]=$g == 'null' ? NULL : $g;
 					}	
@@ -559,7 +591,6 @@ class CRUDController extends Controller{
 						if(array_key_exists('is_active',$form)){
 							$arrData['is_active'] = $request['is_active'];
 						}
-						
 						\DB::beginTransaction();
 						try{
 						    if(method_exists($this,'before_callback'))
@@ -703,7 +734,7 @@ class CRUDController extends Controller{
 				}
 				$val = trim(ltrim(rtrim($v)));
 				if(request()->segment(2) == 'menus' && in_array($k,['banner']) ){
-					if(request()->has('template') && !in_array(request()->get('template'),['parent','']) ){
+					if(request()->has('template') && !in_array(request()->get('template'),['parent','blank','']) ){
 						if($val == '')
 							$errMsg[$k]='This Field is Required';
 					}
@@ -1060,7 +1091,7 @@ class CRUDController extends Controller{
 									}
 								}
 								if(array_key_exists('is_active',$request)){
-									$arrData['is_active'] = $request['is_active'];
+									$model->is_active = $request['is_active'];
 								}
 								$model->{$key} = $id;
 								$model->exists = true;
