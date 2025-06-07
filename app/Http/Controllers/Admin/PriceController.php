@@ -2,12 +2,12 @@
 namespace App\Http\Controllers\Admin;
 
 use AdminApp\Controllers\CRUDController;
-use App\Models\Projectbisnis;
+use App\Models\Price;
 
 class PriceController extends CRUDController{ 
 
 	public $model = '\App\Models\Price';
-	public $header = ['title'=>'Title','is_active'=>'Active'];
+	public $header = ['menus_id'=>'Menu','title'=>'Title','is_active'=>'Active'];
 	//public $orderBy = ['created_at'=>'desc'];
 
 	function __construct(){
@@ -17,10 +17,35 @@ class PriceController extends CRUDController{
 	function callbackField($row,$key,$val){
 	    if($key == 'is_active')
 	        return $val ? 'True' : 'False';
+	    if($key == 'menus_id'){
+            $m = \App\Models\Menus::whereId($val)->first();
+            if($m)
+                return $m->label;
+            return '-';
+        }
+	}
+
+	private function _getMenus(){
+	    $res = [];
+	    $m = \App\Models\Menus::where('template','service')->orderBy('sequence_date','desc');
+	    if($m->count()){
+	        foreach($m->get() as $v){
+	        	$cek = Price::where('menus_id',$v->id)->count();
+	        	if(!$cek <= 4)
+	            	$res[$v->id] = $v->label;
+	        }
+	    }
+	    return $res;
 	}
 		
 	function form(){
 	    return[
+	    	'menus_id'=>[
+	    		'label'=>'Menu',
+	            'type'=>'select',
+	            'option'=>$this->_getMenus(),
+	            'required'=>true
+	    	],
 	        'title'=>[
 	            'type'=>'text',
 	            'label'=>'Title',

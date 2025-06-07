@@ -58,16 +58,10 @@ class Helper{
     static function getMenuChildById($id){
       $p = \App\Models\Menus::where('is_active',1)->where('is_parent',$id)->orderBy('sequence_date','desc')->orderBy('id')->first();
       if($p){
-          if($p->lang()->where('lang',app()->getLocale())->first()->permalink){
+          if($p->permalink){
             return [
-                "permalink"=>$p->lang()->where('lang',app()->getLocale())->first()->permalink,
-                "label"=>$p->lang()->where('lang',app()->getLocale())->first()->label,
-              ];
-          }else{
-            $p2 = \App\Models\Menus::where('is_active',1)->where('is_parent',$p->id)->orderBy('sequence_date','desc')->orderBy('id')->first();
-            return [
-                "permalink"=>$p2->lang()->where('lang',app()->getLocale())->first()->permalink,
-                "label"=>$p2->lang()->where('lang',app()->getLocale())->first()->label,
+                "permalink"=>$p->permalink,
+                "label"=>$p->label,
               ];
           }
       }
@@ -284,23 +278,8 @@ class Helper{
    }
 
    static function cekPermalink($p,$id=null){
-      if($id)
-        $mp = \App\Models\MenusLang::where('permalink',$p)->whereNotIn('menus_id',[$id])->get();
-      else
-        $mp = \App\Models\MenusLang::where('permalink',$p)->get();
-      if($mp->count())
-        return true;
-
-      if(class_exists('\App\Models\NewsLang')){
-        if($id)
-          $mn = \App\Models\NewsLang::where('permalink',$p)->whereNotIn('news_id',[$id])->get();
-        else
-          $mn = \App\Models\NewsLang::where('permalink',$p)->get();
-        if($mn->count())
-          return true;
-      }
-
-      return false;
+    $mp = \App\Models\Menus::where('permalink',$p)->whereNotIn('id',[$id]);
+    return $mp->count() ? true : false;
    }
 
    static function getMenuById($id){
@@ -369,5 +348,16 @@ class Helper{
       }else{
         return $res[0];
       }
+   }
+
+   static function getMetaPage($data){
+      $def = getDefaultMeta();
+      $meta = [
+        'meta_title'=>$data->meta_title ?: $def['meta_title'],
+        'meta_desc'=>$data->meta_description ?: $def['meta_description'],
+        'meta_keyword'=>$data->meta_title ?: $def['meta_keyword'],
+        'meta_img'=>$data->meta_title ?: $def['meta_img'],
+      ];
+      return $meta;
    }
 }

@@ -15,15 +15,16 @@ class Frontend
      */
     public function handle($request, Closure $next)
     {
-            if(request()->segment(1) == null){
-                app()->setLocale(app()->getLocale());
-            }else{
-        	   app()->setLocale(request()->segment(1));
+            $menuMain = \App\Helper::getMenusMain();
+            view()->share('menuMain',$menuMain);
+
+            $activeMenu = \App\Models\Menus::where('permalink',request()->segment(1))->where('template','<>','blank')->whereIsActive(1);
+            $meta = getDefaultMeta();
+            if($activeMenu->count()){
+                $dataMenu = $activeMenu->first();
+                $meta = \App\Helper::getMetaPage($dataMenu);
             }
-            $s = \App\Helper::getSetting('setting','online');
-            if($s == 'off'){
-                abort(503);
-            }
+            view()->share('meta',$meta);
             return $next($request);
         // }
         
