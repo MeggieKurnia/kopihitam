@@ -307,7 +307,7 @@
                   }
                 }
               </script>
-              <div class="swiper-wrapper align-items-center">
+              <div class="swiper-wrapper align-items-center card-body">
 
                 <div class="swiper-slide">
                   <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
