@@ -61,6 +61,34 @@ return[
 			'controller'=>'\\App\\Http\\Controllers\\Admin\\HomeController',
 			'fa'=>'fa fa-gear'
 		],
+		'client'=>[
+			'label'=>'Client',
+			'parent'=>'home_content',
+			'route'=>['create','index','edit','delete'],
+			'controller'=>'\\App\\Http\\Controllers\\Admin\\ClientController',
+			'fa'=>'fa fa-gear'
+		],
+		'feature'=>[
+			'label'=>'Features',
+			'parent'=>'home_content',
+			'route'=>['create','index','edit','delete'],
+			'controller'=>'\\App\\Http\\Controllers\\Admin\\FeatureController',
+			'fa'=>'fa fa-gear'
+		],
+		'about'=>[
+			'label'=>'About',
+			'parent'=>'home_content',
+			'route'=>['setting'],
+			'controller'=>'\\App\\Http\\Controllers\\Admin\\AboutController',
+			'fa'=>'fa fa-gear'
+		],
+		'testimoni'=>[
+			'label'=>'Testimonials',
+			'parent'=>'home_content',
+			'route'=>['index','edit'],
+			'controller'=>'\\App\\Http\\Controllers\\Admin\\TestimoniController',
+			'fa'=>'fa fa-gear'
+		],
 		'price'=>[
 			'label'=>'Price',
 			'parent'=>null,

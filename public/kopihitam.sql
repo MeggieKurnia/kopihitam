@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 07, 2025 at 05:30 PM
+-- Generation Time: Jun 07, 2025 at 08:13 PM
 -- Server version: 8.0.31-0ubuntu0.22.04.1
 -- PHP Version: 8.3.20
 
@@ -24,9 +24,32 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `client`
+--
+
+DROP TABLE IF EXISTS `client`;
+CREATE TABLE `client` (
+  `id` bigint UNSIGNED NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `is_active` int NOT NULL DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `client`
+--
+
+INSERT INTO `client` (`id`, `image`, `is_active`, `created_at`, `updated_at`) VALUES
+(1, 'files/favicon.png', 1, '2025-06-07 11:35:03', '2025-06-07 11:35:03');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `contact_submit`
 --
 
+DROP TABLE IF EXISTS `contact_submit`;
 CREATE TABLE `contact_submit` (
   `id` bigint UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -50,6 +73,7 @@ INSERT INTO `contact_submit` (`id`, `name`, `email`, `subject`, `message`, `crea
 -- Table structure for table `failed_jobs`
 --
 
+DROP TABLE IF EXISTS `failed_jobs`;
 CREATE TABLE `failed_jobs` (
   `id` bigint UNSIGNED NOT NULL,
   `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -62,9 +86,36 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `feature`
+--
+
+DROP TABLE IF EXISTS `feature`;
+CREATE TABLE `feature` (
+  `id` bigint UNSIGNED NOT NULL,
+  `feature` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
+  `image` text COLLATE utf8mb4_unicode_ci,
+  `is_active` int NOT NULL DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `feature`
+--
+
+INSERT INTO `feature` (`id`, `feature`, `title`, `description`, `image`, `is_active`, `created_at`, `updated_at`) VALUES
+(1, 'Tes Feture 1', 'Impedit facilis occaecati odio neque aperiam sit 1', '<p class=\"fst-italic abu-abu\">Eos voluptatibus quo. Odio similique illum id quidem non enim fuga. Qui natus non sunt dicta dolor et. In asperiores velit quaerat perferendis aut</p>\r\n\r\n<p>Iure officiis odit rerum. Harum sequi eum illum corrupti culpa veritatis quisquam. Neque necessitatibus illo rerum eum ut. Commodi ipsam minima molestiae sed laboriosam a iste odio. Earum odit nesciunt fugiat sit ullam. Soluta et harum voluptatem optio quae</p>', 'files/tab-4.png', 1, '2025-06-07 11:51:06', '2025-06-07 12:01:50'),
+(2, 'gfd', 'Et blanditiis nemo veritatis excepturi', '<p class=\"fst-italic abu-abu\">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>\r\n\r\n<p>Ea ipsum voluptatem consequatur quis est. Illum error ullam omnis quia et reiciendis sunt sunt est. Non aliquid repellendus itaque accusamus eius et velit ipsa voluptates. Optio nesciunt eaque beatae accusamus lerode pakto madirna desera vafle de nideran pal</p>', 'files/tab-3.png', 1, '2025-06-07 11:52:37', '2025-06-07 11:52:37');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `menus`
 --
 
+DROP TABLE IF EXISTS `menus`;
 CREATE TABLE `menus` (
   `id` bigint UNSIGNED NOT NULL,
   `template` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -82,18 +133,21 @@ CREATE TABLE `menus` (
   `meta_description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `meta_keyword` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `meta_img` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `permalink` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `permalink` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `show_started` int DEFAULT '0',
+  `faq_show_home` int NOT NULL DEFAULT '0',
+  `faq_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `menus`
 --
 
-INSERT INTO `menus` (`id`, `template`, `sequence_date`, `is_active`, `banner`, `is_parent`, `show_home`, `position`, `youtube_embed`, `created_at`, `updated_at`, `label`, `meta_title`, `meta_description`, `meta_keyword`, `meta_img`, `permalink`) VALUES
-(3, 'blank', '2025-06-06 03:13:10', 1, NULL, NULL, NULL, '[\"main\",\"bottom\"]', NULL, '2025-06-05 20:13:10', '2025-06-06 00:48:33', 'Service', NULL, NULL, NULL, NULL, NULL),
-(4, 'service', '2025-06-20 03:14:07', 1, 'files/hero-carousel-2.jpg', '3', 1, '[\"main\",\"bottom\"]', NULL, '2025-06-05 20:14:07', '2025-06-06 00:14:33', 'Service 1 dsada', 'Service 1 Meta title', 'Meta Desc', 'Keyword', 'files/favicon.png', 'service-1-dsada'),
-(5, 'service', '2025-06-06 04:15:49', 1, 'files/favicon.png', '3', 1, '[\"bottom\"]', NULL, '2025-06-05 21:15:49', '2025-06-06 00:13:05', 'fsdfsa', 'fdsfasd', 'fds', 'fsda', NULL, 'fsdfsa-dss'),
-(6, 'contact', '2025-04-07 20:42:00', 1, 'files/hero-carousel-2.jpg', NULL, NULL, '[\"main\"]', NULL, '2025-06-06 06:41:25', '2025-06-06 06:42:05', 'Contact', 'Contact', 'Contact', NULL, NULL, 'contact');
+INSERT INTO `menus` (`id`, `template`, `sequence_date`, `is_active`, `banner`, `is_parent`, `show_home`, `position`, `youtube_embed`, `created_at`, `updated_at`, `label`, `meta_title`, `meta_description`, `meta_keyword`, `meta_img`, `permalink`, `show_started`, `faq_show_home`, `faq_title`) VALUES
+(3, 'blank', '2025-06-06 03:13:10', 1, NULL, NULL, NULL, '[\"main\",\"bottom\"]', NULL, '2025-06-05 20:13:10', '2025-06-06 00:48:33', 'Service', NULL, NULL, NULL, NULL, NULL, 0, 0, NULL),
+(4, 'service', '2025-06-20 03:14:07', 1, 'files/hero-carousel-2.jpg', '3', 1, '[\"main\",\"bottom\"]', NULL, '2025-06-05 20:14:07', '2025-06-07 13:04:18', 'Service 1 dsada', 'Service 1 Meta title', 'Meta Desc', 'Keyword', 'files/favicon.png', 'service-1-dsada', 1, 1, 'Jasa Pembuatan PT se-Indonesia Tes'),
+(5, 'service', '2025-06-06 04:15:49', 1, 'files/favicon.png', '3', 1, '[\"bottom\"]', NULL, '2025-06-05 21:15:49', '2025-06-06 00:13:05', 'fsdfsa', 'fdsfasd', 'fds', 'fsda', NULL, 'fsdfsa-dss', 0, 0, NULL),
+(6, 'contact', '2025-04-07 20:42:00', 1, 'files/hero-carousel-2.jpg', NULL, NULL, '[\"main\"]', NULL, '2025-06-06 06:41:25', '2025-06-06 06:42:05', 'Contact', 'Contact', 'Contact', NULL, NULL, 'contact', 0, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -101,6 +155,7 @@ INSERT INTO `menus` (`id`, `template`, `sequence_date`, `is_active`, `banner`, `
 -- Table structure for table `menus_lang`
 --
 
+DROP TABLE IF EXISTS `menus_lang`;
 CREATE TABLE `menus_lang` (
   `id` bigint UNSIGNED NOT NULL,
   `menus_id` bigint UNSIGNED NOT NULL,
@@ -123,6 +178,7 @@ CREATE TABLE `menus_lang` (
 -- Table structure for table `migrations`
 --
 
+DROP TABLE IF EXISTS `migrations`;
 CREATE TABLE `migrations` (
   `id` int UNSIGNED NOT NULL,
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -150,7 +206,12 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (16, '2025_06_05_171136_create_price_cv', 8),
 (19, '2025_06_06_023459_alter_menus', 9),
 (20, '2025_06_06_041952_alter_price', 10),
-(21, '2025_06_07_154431_create_contact_submit', 11);
+(21, '2025_06_07_154431_create_contact_submit', 11),
+(22, '2025_06_07_181045_alter_menus', 12),
+(23, '2025_06_07_182936_create_client', 13),
+(24, '2025_06_07_184248_create_feture', 14),
+(26, '2025_06_07_192125_create_testimoni', 15),
+(27, '2025_06_07_195208_alter_menus', 16);
 
 -- --------------------------------------------------------
 
@@ -158,6 +219,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- Table structure for table `password_resets`
 --
 
+DROP TABLE IF EXISTS `password_resets`;
 CREATE TABLE `password_resets` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -170,6 +232,7 @@ CREATE TABLE `password_resets` (
 -- Table structure for table `price`
 --
 
+DROP TABLE IF EXISTS `price`;
 CREATE TABLE `price` (
   `id` bigint UNSIGNED NOT NULL,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -199,6 +262,7 @@ INSERT INTO `price` (`id`, `title`, `harga`, `harga_coret`, `is_advance`, `is_un
 -- Table structure for table `price_cv`
 --
 
+DROP TABLE IF EXISTS `price_cv`;
 CREATE TABLE `price_cv` (
   `id` bigint UNSIGNED NOT NULL,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -228,6 +292,7 @@ INSERT INTO `price_cv` (`id`, `title`, `harga`, `harga_coret`, `is_advance`, `is
 -- Table structure for table `privillage`
 --
 
+DROP TABLE IF EXISTS `privillage`;
 CREATE TABLE `privillage` (
   `id` bigint UNSIGNED NOT NULL,
   `user_id` bigint UNSIGNED NOT NULL,
@@ -243,6 +308,7 @@ CREATE TABLE `privillage` (
 -- Table structure for table `section2_home`
 --
 
+DROP TABLE IF EXISTS `section2_home`;
 CREATE TABLE `section2_home` (
   `id` bigint UNSIGNED NOT NULL,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -264,6 +330,7 @@ INSERT INTO `section2_home` (`id`, `title`, `is_active`, `created_at`, `updated_
 -- Table structure for table `section3_home`
 --
 
+DROP TABLE IF EXISTS `section3_home`;
 CREATE TABLE `section3_home` (
   `id` bigint UNSIGNED NOT NULL,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -285,6 +352,7 @@ INSERT INTO `section3_home` (`id`, `title`, `is_active`, `created_at`, `updated_
 -- Table structure for table `section4_home`
 --
 
+DROP TABLE IF EXISTS `section4_home`;
 CREATE TABLE `section4_home` (
   `id` bigint UNSIGNED NOT NULL,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -306,6 +374,7 @@ INSERT INTO `section4_home` (`id`, `title`, `is_active`, `created_at`, `updated_
 -- Table structure for table `section5_home`
 --
 
+DROP TABLE IF EXISTS `section5_home`;
 CREATE TABLE `section5_home` (
   `id` bigint UNSIGNED NOT NULL,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -327,6 +396,7 @@ INSERT INTO `section5_home` (`id`, `title`, `is_active`, `created_at`, `updated_
 -- Table structure for table `settings`
 --
 
+DROP TABLE IF EXISTS `settings`;
 CREATE TABLE `settings` (
   `id` bigint UNSIGNED NOT NULL,
   `module` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -347,26 +417,56 @@ INSERT INTO `settings` (`id`, `module`, `key`, `value`, `lang`, `created_at`, `u
 (23, 'home', 'intro', 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut.', 'en', '2025-06-05 08:21:34', '2025-06-05 08:21:34'),
 (24, 'home', 'text_link', 'Get Start', 'en', '2025-06-05 08:21:34', '2025-06-05 08:21:34'),
 (25, 'home', 'link', 'https://google.com', 'en', '2025-06-05 08:21:34', '2025-06-05 08:21:34'),
-(26, 'localization', 'paket_pt', 'Paket Pendirian PT', 'en', '2025-06-05 10:24:30', '2025-06-05 10:24:30'),
-(27, 'localization', 'paket_cv', 'Paket Pendirian CV', 'en', '2025-06-05 10:24:30', '2025-06-05 10:24:30'),
-(28, 'localization', 'buy_now', 'Buy Nows', 'en', '2025-06-05 10:24:30', '2025-06-05 10:24:30'),
-(51, 'setting', 'online', 'on', 'en', '2025-06-06 07:12:01', '2025-06-06 07:12:01'),
-(52, 'setting', 'favicon', 'files/favicon.png', 'en', '2025-06-06 07:12:01', '2025-06-06 07:12:01'),
-(53, 'setting', 'logo', 'files/logo-dummy.png', 'en', '2025-06-06 07:12:01', '2025-06-06 07:12:01'),
-(54, 'setting', 'sosmed_tw', NULL, 'en', '2025-06-06 07:12:01', '2025-06-06 07:12:01'),
-(55, 'setting', 'sosmed_fb', NULL, 'en', '2025-06-06 07:12:01', '2025-06-06 07:12:01'),
-(56, 'setting', 'sosmed_ig', NULL, 'en', '2025-06-06 07:12:01', '2025-06-06 07:12:01'),
-(57, 'setting', 'sosmed_in', NULL, 'en', '2025-06-06 07:12:01', '2025-06-06 07:12:01'),
-(58, 'setting', 'copyright', '© <span>Copyright</span> <strong class=\"px-1 sitename\">PT TESS</strong> <span>All Rights Reserved</span>', 'en', '2025-06-06 07:12:01', '2025-06-06 07:12:01'),
-(59, 'setting', 'meta_title', 'Home | PT Tess', 'en', '2025-06-06 07:12:01', '2025-06-06 07:12:01'),
-(60, 'setting', 'meta_desc', 'Meta Desc', 'en', '2025-06-06 07:12:01', '2025-06-06 07:12:01'),
-(61, 'setting', 'meta_keyword', 'Meta Keyword', 'en', '2025-06-06 07:12:01', '2025-06-06 07:12:01'),
-(62, 'setting', 'meta_img', 'files/logo-dummy.png', 'en', '2025-06-06 07:12:01', '2025-06-06 07:12:01'),
 (63, 'contact', 'address', 'Jalan S.parman', 'en', '2025-06-07 09:22:37', '2025-06-07 09:22:37'),
 (64, 'contact', 'phone', '088787897988', 'en', '2025-06-07 09:22:37', '2025-06-07 09:22:37'),
 (65, 'contact', 'email', 'dafsad@mail.com', 'en', '2025-06-07 09:22:37', '2025-06-07 09:22:37'),
 (66, 'contact', 'iframe_map', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.5358897563606!2d106.79496387387886!3d-6.1927941937948106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f69478df636f%3A0xc283f16e9eda0173!2sMenara%20Citicon!5e0!3m2!1sid!2sid!4v1749216744791!5m2!1sid!2sid', 'en', '2025-06-07 09:22:37', '2025-06-07 09:22:37'),
-(67, 'contact', 'template_email', '<p>Hi %name%,<br />\r\n<br />\r\nYour email %email%<br />\r\n<br />\r\nThanks</p>', 'en', '2025-06-07 09:22:37', '2025-06-07 09:22:37');
+(67, 'contact', 'template_email', '<p>Hi %name%,<br />\r\n<br />\r\nYour email %email%<br />\r\n<br />\r\nThanks</p>', 'en', '2025-06-07 09:22:37', '2025-06-07 09:22:37'),
+(68, 'setting', 'online', 'on', 'en', '2025-06-07 11:19:27', '2025-06-07 11:19:27'),
+(69, 'setting', 'favicon', 'files/favicon.png', 'en', '2025-06-07 11:19:27', '2025-06-07 11:19:27'),
+(70, 'setting', 'logo', 'files/logo-dummy.png', 'en', '2025-06-07 11:19:27', '2025-06-07 11:19:27'),
+(71, 'setting', 'sosmed_tw', NULL, 'en', '2025-06-07 11:19:27', '2025-06-07 11:19:27'),
+(72, 'setting', 'sosmed_fb', NULL, 'en', '2025-06-07 11:19:27', '2025-06-07 11:19:27'),
+(73, 'setting', 'sosmed_ig', NULL, 'en', '2025-06-07 11:19:27', '2025-06-07 11:19:27'),
+(74, 'setting', 'sosmed_in', NULL, 'en', '2025-06-07 11:19:27', '2025-06-07 11:19:27'),
+(75, 'setting', 'copyright', NULL, 'en', '2025-06-07 11:19:27', '2025-06-07 11:19:27'),
+(76, 'setting', 'link_getstart', 'https://google.com', 'en', '2025-06-07 11:19:27', '2025-06-07 11:19:27'),
+(77, 'setting', 'meta_title', 'Home | PT Tess', 'en', '2025-06-07 11:19:27', '2025-06-07 11:19:27'),
+(78, 'setting', 'meta_desc', 'Meta Desc', 'en', '2025-06-07 11:19:27', '2025-06-07 11:19:27'),
+(79, 'setting', 'meta_keyword', 'Meta Keyword', 'en', '2025-06-07 11:19:27', '2025-06-07 11:19:27'),
+(80, 'setting', 'meta_img', 'files/logo-dummy.png', 'en', '2025-06-07 11:19:27', '2025-06-07 11:19:27'),
+(96, 'about', 'section_left', '<p>&ldquo;Dengan adanya Vorent saya<br />\r\nberharap dapat membantu pelaku usaha terutama UMKM agar dapat tumbuh berkembang.&rdquo;</p>\r\n\r\n<p><strong>&mdash; Fuad Ristiyanto, Vorent Founder</strong></p>', 'en', '2025-06-07 12:15:13', '2025-06-07 12:15:13'),
+(97, 'about', 'image', 'files/tab-4.png', 'en', '2025-06-07 12:15:13', '2025-06-07 12:15:13'),
+(98, 'about', 'section_right', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n\r\n<ul>\r\n	<li><i class=\"bi bi-check2-circle\"></i><span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>\r\n	<li><i class=\"bi bi-check2-circle\"></i><span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>\r\n	<li><i class=\"bi bi-check2-circle\"></i><span>Ullamco laboris nisi ut aliquip ex ea commodo</span></li>\r\n</ul>', 'en', '2025-06-07 12:15:13', '2025-06-07 12:15:13'),
+(99, 'about', 'active', '1', 'en', '2025-06-07 12:15:13', '2025-06-07 12:15:13'),
+(104, 'localization', 'get_start', 'Get Started', 'en', '2025-06-07 13:12:38', '2025-06-07 13:12:38'),
+(105, 'localization', 'wujudkan_impian', 'Mewujudkan impian <strong>Anda untuk memulai bisnis</strong>', 'en', '2025-06-07 13:12:38', '2025-06-07 13:12:38'),
+(106, 'localization', 'buy_now', 'Buy Nows', 'en', '2025-06-07 13:12:38', '2025-06-07 13:12:38'),
+(107, 'localization', 'faq', 'FAQ xx?', 'en', '2025-06-07 13:12:38', '2025-06-07 13:12:38');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `testimoni`
+--
+
+DROP TABLE IF EXISTS `testimoni`;
+CREATE TABLE `testimoni` (
+  `id` bigint UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `active_home` int NOT NULL DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `testimoni`
+--
+
+INSERT INTO `testimoni` (`id`, `title`, `description`, `image`, `active_home`, `created_at`, `updated_at`) VALUES
+(1, 'Exercitationem repudiandae officiis neque suscipit Tes', 'Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.', 'files/tab-4.png', 1, '2025-06-07 12:35:59', '2025-06-07 12:43:40');
 
 -- --------------------------------------------------------
 
@@ -374,6 +474,7 @@ INSERT INTO `settings` (`id`, `module`, `key`, `value`, `lang`, `created_at`, `u
 -- Table structure for table `user_cms`
 --
 
+DROP TABLE IF EXISTS `user_cms`;
 CREATE TABLE `user_cms` (
   `id` bigint UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -400,6 +501,7 @@ INSERT INTO `user_cms` (`id`, `name`, `email`, `email_verified_at`, `password`, 
 -- Table structure for table `widgets`
 --
 
+DROP TABLE IF EXISTS `widgets`;
 CREATE TABLE `widgets` (
   `id` bigint UNSIGNED NOT NULL,
   `base_id` int NOT NULL,
@@ -432,7 +534,10 @@ INSERT INTO `widgets` (`id`, `base_id`, `module`, `name`, `sequence`, `is_active
 (31, 1, 'section5', 'image', '2025-06-01 15:05:30', 1, NULL, NULL),
 (81, 1, 'price', 'item', '2025-06-06 07:17:48', 1, NULL, NULL),
 (82, 2, 'price', 'item', '2025-06-06 07:17:56', 1, NULL, NULL),
-(83, 3, 'price', 'item', '2025-06-06 07:18:05', 1, NULL, NULL);
+(83, 3, 'price', 'item', '2025-06-06 07:18:05', 1, NULL, NULL),
+(86, 1, 'testimoni', 'testi', '2025-06-07 19:35:59', 1, NULL, NULL),
+(89, 4, 'menus', 'faq', '2025-06-07 19:57:22', 1, NULL, NULL),
+(90, 4, 'menus', 'faq', '2025-06-07 19:57:22', 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -440,6 +545,7 @@ INSERT INTO `widgets` (`id`, `base_id`, `module`, `name`, `sequence`, `is_active
 -- Table structure for table `widget_value`
 --
 
+DROP TABLE IF EXISTS `widget_value`;
 CREATE TABLE `widget_value` (
   `id` bigint UNSIGNED NOT NULL,
   `widget_id` bigint UNSIGNED NOT NULL,
@@ -501,11 +607,25 @@ INSERT INTO `widget_value` (`id`, `widget_id`, `lang`, `key`, `value`, `created_
 (91, 31, NULL, 'images', 'files/news-1.png', NULL, NULL),
 (141, 81, NULL, 'items', 'Item1', NULL, NULL),
 (142, 82, NULL, 'items', 'Item x', NULL, NULL),
-(143, 83, NULL, 'items', 'Item sa', NULL, NULL);
+(143, 83, NULL, 'items', 'Item sa', NULL, NULL),
+(152, 86, NULL, 'category', 'Category tes', NULL, NULL),
+(153, 86, NULL, 'clinet', 'Client Tes', NULL, NULL),
+(154, 86, NULL, 'project_date', '2020-10-10', NULL, NULL),
+(155, 86, NULL, 'project_url', 'https://google.com', NULL, NULL),
+(160, 89, NULL, 'que', 'Pertanyaan 1', NULL, NULL),
+(161, 89, NULL, 'ans', 'Prosesnya meliputi pemilihan nama, akta notaris, NPWP, dan pendaftaran OSS.', NULL, NULL),
+(162, 90, NULL, 'que', 'Pertanyaan 2', NULL, NULL),
+(163, 90, NULL, 'ans', 'PT memberikan status hukum pada bisnis, melindungi aset pribadi, dan meningkatkan kredibilitas.', NULL, NULL);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `client`
+--
+ALTER TABLE `client`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `contact_submit`
@@ -517,6 +637,12 @@ ALTER TABLE `contact_submit`
 -- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `feature`
+--
+ALTER TABLE `feature`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -594,6 +720,12 @@ ALTER TABLE `settings`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `testimoni`
+--
+ALTER TABLE `testimoni`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `user_cms`
 --
 ALTER TABLE `user_cms`
@@ -618,6 +750,12 @@ ALTER TABLE `widget_value`
 --
 
 --
+-- AUTO_INCREMENT for table `client`
+--
+ALTER TABLE `client`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `contact_submit`
 --
 ALTER TABLE `contact_submit`
@@ -628,6 +766,12 @@ ALTER TABLE `contact_submit`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `feature`
+--
+ALTER TABLE `feature`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `menus`
@@ -645,7 +789,7 @@ ALTER TABLE `menus_lang`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `price`
@@ -693,7 +837,13 @@ ALTER TABLE `section5_home`
 -- AUTO_INCREMENT for table `settings`
 --
 ALTER TABLE `settings`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
+
+--
+-- AUTO_INCREMENT for table `testimoni`
+--
+ALTER TABLE `testimoni`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `user_cms`
@@ -705,13 +855,13 @@ ALTER TABLE `user_cms`
 -- AUTO_INCREMENT for table `widgets`
 --
 ALTER TABLE `widgets`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
 
 --
 -- AUTO_INCREMENT for table `widget_value`
 --
 ALTER TABLE `widget_value`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=144;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=164;
 
 --
 -- Constraints for dumped tables

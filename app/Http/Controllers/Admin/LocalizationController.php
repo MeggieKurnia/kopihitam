@@ -9,21 +9,26 @@ class LocalizationController extends CRUDController{
 
 	function form(){
 		return[
-			'paket_pt'=>[
+			'get_start'=>[
 				'type'=>'text',
-				'label'=>'Paket PT',
-				'value'=>Helper::getSetting('localization','paket_pt'),
+				'label'=>'Get Started',
+				'value'=>Helper::getSetting('localization','get_start'),
 			],
-			'paket_cv'=>[
+			'wujudkan_impian'=>[
 				'type'=>'text',
-				'label'=>'Paket CV',
-				'value'=>Helper::getSetting('localization','paket_cv'),
+				'label'=>'Wujudkan Impian',
+				'value'=>Helper::getSetting('localization','wujudkan_impian'),
 			],
 			'buy_now'=>[
 				'type'=>'text',
 				'label'=>'Buy Now',
 				'value'=>Helper::getSetting('localization','buy_now'),
 			],
+			'faq'=>[
+				'type'=>'text',
+				'label'=>'Faq',
+				'value'=>Helper::getSetting('localization','faq')
+			]
 		];
 	}
 }

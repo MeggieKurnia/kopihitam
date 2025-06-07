@@ -46,3 +46,8 @@
 
 </section>
 @endif
+@if(isset($home))
+  @if($start)
+    @include('fe.started')
+  @endif
+@endif

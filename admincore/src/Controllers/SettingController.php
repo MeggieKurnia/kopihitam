@@ -57,6 +57,13 @@ class SettingController extends CRUDController{
 				'label'=>'Copyright'
 			],
 
+			'link_getstart'=>[
+				'type'=>'text',
+				'label'=>'Link Get Started',
+				'required'=>true
+			],
+			
+
 			'meta_title'=>[
 				'type'=>'text',
 				'label'=>'Meta Title (Default)',

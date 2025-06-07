@@ -146,7 +146,36 @@ class MenusController extends CRUDController{
 				]
 			],
 
-			//End of Only Business
+			'faq_title'=>[
+				'type'=>'text',
+				'label'=>'Faq Title',
+			],
+			
+			'faq'=>[
+				'label'=>'FAQ',
+				'type'=>'widget',
+				'data'=>[
+					[
+						'que'=>[
+							'type'=>'text',
+							'label'=>'Pertanyaan',
+						],
+						'ans'=>[
+							'type'=>'textarea',
+							'label'=>'Jawaban',
+						]
+					]
+
+				]
+			],
+
+			'faq_show_home'=>[
+				'type'=>'select',
+				'option'=>[
+					'0'=>'False',
+					'1'=>'True'
+				]
+			],
 
 			'meta_title'=>[
 				'type'=>'text',
@@ -167,6 +196,11 @@ class MenusController extends CRUDController{
 		    ],
 			'show_home'=>[ // only template service
 				'label'=>'Show Home',
+				'type'=>'select',
+				'option'=>["1"=>"True","0"=>"False"]
+			],
+			'show_started'=>[ // only template service
+				'label'=>'Show Get Started',
 				'type'=>'select',
 				'option'=>["1"=>"True","0"=>"False"]
 			],
@@ -217,8 +251,16 @@ class MenusController extends CRUDController{
 						$('[name=\"template\"]').change(function(){
 							if($(this).val() == 'service'){
 									$('[name=\"show_home\"]').parents('.form-group').show();
+									$('[name=\"show_started\"]').parents('.form-group').show();
+									$('.modal-body > div').eq(7).show();
+									$('[name=\"faq_title\"]').parents('.form-group').show();
+									$('[name=\"faq_show_home\"]').parents('.form-group').show();
 								}else{
 									$('[name=\"show_home\"]').parents('.form-group').hide();
+									$('[name=\"show_started\"]').parents('.form-group').hide();
+									$('.modal-body > div').eq(7).hide();
+									$('[name=\"faq_title\"]').parents('.form-group').hide();
+									$('[name=\"faq_show_home\"]').parents('.form-group').hide();
 								}
 							if($(this).val() == 'blank'){
 								$('[name=\"banner\"]').parents('.form-group').hide();
