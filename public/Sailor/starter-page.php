@@ -115,31 +115,8 @@
     <!-- /Pricing Section -->
 
     <!-- Clients Section -->
-    <section id="clients" class="clients section light-background">
-
-      <div class="container" data-aos="fade-up">
-        <div class="row gy-4">
-          <div class="col-xl-2 col-md-3 col-6 client-logo">
-            <img src="assets/img/clients/client-1.png" class="img-fluid" alt="">
-          </div>
-          <div class="col-xl-2 col-md-3 col-6 client-logo">
-            <img src="assets/img/clients/client-2.png" class="img-fluid" alt="">
-          </div>
-          <div class="col-xl-2 col-md-3 col-6 client-logo">
-            <img src="assets/img/clients/client-3.png" class="img-fluid" alt="">
-          </div>
-          <div class="col-xl-2 col-md-3 col-6 client-logo">
-            <img src="assets/img/clients/client-4.png" class="img-fluid" alt="">
-          </div>
-          <div class="col-xl-2 col-md-3 col-6 client-logo">
-            <img src="assets/img/clients/client-5.png" class="img-fluid" alt="">
-          </div>
-          <div class="col-xl-2 col-md-3 col-6 client-logo">
-            <img src="assets/img/clients/client-6.png" class="img-fluid" alt="">
-          </div>
-        </div>
-      </div>
-    </section><!-- /Clients Section -->
+    <?php include 'client-slider.php' ?>
+    <!-- /Clients Section -->
 
     <!-- Features Section -->
     <section id="features" class="features section">
@@ -245,20 +222,20 @@
         <p class="ungu">About Us<br></p>
       </div><!-- End Section Title -->
       <div class="container">
-        <div class="row gy-4">
+        <div class="row gy-4 abu-abu">
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <p>
+            <p class="">
               “Dengan adanya Vorent saya </br>
               berharap dapat membantu pelaku usaha terutama UMKM agar dapat tumbuh berkembang.”
             </p>
-            <p><strong>— Fuad Ristiyanto, Vorent Founder</strong></p>
+            <p class="ungu"><strong>— Fuad Ristiyanto, Vorent Founder</strong></p>
           </div>
 
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
             <img src="assets/img/tabs/tab-1.png" alt="" class="img-fluid">
           </div>
 
-          <div class="col-lg-4 content" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-4 content " data-aos="fade-up" data-aos-delay="100">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
               magna aliqua.

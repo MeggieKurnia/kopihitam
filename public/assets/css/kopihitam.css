@@ -1,4 +1,4 @@
-.judul-section {
+    .judul-section {
       font-size: 28px !important;
       font-weight: bold !important;
     }
@@ -69,4 +69,17 @@
       /* color: #212529 !important; */
       background-color: #00000000 !important;
       box-shadow: none !important;
+    }
+
+    /* Hilangkan shadow dan border */
+    .swiper-slide .portfolio-info {
+      box-shadow: none !important;
+      border: none !important;
+      border-radius: 3px !important;
+      background-color: #f2f4f6 !important;
+      padding: 2 !important;
+    }
+
+    .swiper-slide {
+      padding: 0 !important;
     }
