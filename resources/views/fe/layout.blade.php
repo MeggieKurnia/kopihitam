@@ -102,7 +102,7 @@
     </div>
   </header>
   @yield('content')
-  <footer id="footer" class="footer dark-background">
+  <footer id="footer" class="footer dark-background footer-color">
 
     <div class="container footer-top">
       <div class="row gx-6">

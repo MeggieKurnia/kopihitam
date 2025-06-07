@@ -16,4 +16,3 @@ Route::group(['middleware'=>['fe']],function(){
 	Route::post('postContact',[App\Http\Controllers\Frontend\MainController::class,'postContact']);
 });
 
-

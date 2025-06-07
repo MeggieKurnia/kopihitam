@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 05, 2025 at 05:25 PM
+-- Generation Time: Jun 07, 2025 at 05:30 PM
 -- Server version: 8.0.31-0ubuntu0.22.04.1
 -- PHP Version: 8.3.20
 
@@ -20,6 +20,29 @@ SET time_zone = "+00:00";
 --
 -- Database: `kopihitam`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact_submit`
+--
+
+CREATE TABLE `contact_submit` (
+  `id` bigint UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `subject` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `message` text COLLATE utf8mb4_unicode_ci,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `contact_submit`
+--
+
+INSERT INTO `contact_submit` (`id`, `name`, `email`, `subject`, `message`, `created_at`, `updated_at`) VALUES
+(4, 'fdsfdzs', 'ccbbaarsq@gmail.com', 'Tes Subject', 'Message Tes', '2025-06-07 09:30:53', '2025-06-07 09:30:53');
 
 -- --------------------------------------------------------
 
@@ -49,12 +72,28 @@ CREATE TABLE `menus` (
   `is_active` int NOT NULL DEFAULT '1',
   `banner` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `is_parent` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `show_home` int DEFAULT NULL,
+  `show_home` int DEFAULT '0',
   `position` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `youtube_embed` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `label` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_keyword` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_img` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `permalink` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `menus`
+--
+
+INSERT INTO `menus` (`id`, `template`, `sequence_date`, `is_active`, `banner`, `is_parent`, `show_home`, `position`, `youtube_embed`, `created_at`, `updated_at`, `label`, `meta_title`, `meta_description`, `meta_keyword`, `meta_img`, `permalink`) VALUES
+(3, 'blank', '2025-06-06 03:13:10', 1, NULL, NULL, NULL, '[\"main\",\"bottom\"]', NULL, '2025-06-05 20:13:10', '2025-06-06 00:48:33', 'Service', NULL, NULL, NULL, NULL, NULL),
+(4, 'service', '2025-06-20 03:14:07', 1, 'files/hero-carousel-2.jpg', '3', 1, '[\"main\",\"bottom\"]', NULL, '2025-06-05 20:14:07', '2025-06-06 00:14:33', 'Service 1 dsada', 'Service 1 Meta title', 'Meta Desc', 'Keyword', 'files/favicon.png', 'service-1-dsada'),
+(5, 'service', '2025-06-06 04:15:49', 1, 'files/favicon.png', '3', 1, '[\"bottom\"]', NULL, '2025-06-05 21:15:49', '2025-06-06 00:13:05', 'fsdfsa', 'fdsfasd', 'fds', 'fsda', NULL, 'fsdfsa-dss'),
+(6, 'contact', '2025-04-07 20:42:00', 1, 'files/hero-carousel-2.jpg', NULL, NULL, '[\"main\"]', NULL, '2025-06-06 06:41:25', '2025-06-06 06:42:05', 'Contact', 'Contact', 'Contact', NULL, NULL, 'contact');
 
 -- --------------------------------------------------------
 
@@ -108,7 +147,10 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (11, '2025_06_01_145955_create_sec5home', 5),
 (14, '2025_06_05_160356_create_price', 6),
 (15, '2025_06_05_170804_alter_price', 7),
-(16, '2025_06_05_171136_create_price_cv', 8);
+(16, '2025_06_05_171136_create_price_cv', 8),
+(19, '2025_06_06_023459_alter_menus', 9),
+(20, '2025_06_06_041952_alter_price', 10),
+(21, '2025_06_07_154431_create_contact_submit', 11);
 
 -- --------------------------------------------------------
 
@@ -138,18 +180,18 @@ CREATE TABLE `price` (
   `is_active` int DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `link_buy` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `link_buy` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `menus_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `price`
 --
 
-INSERT INTO `price` (`id`, `title`, `harga`, `harga_coret`, `is_advance`, `is_unggulan`, `is_active`, `created_at`, `updated_at`, `link_buy`) VALUES
-(1, 'Free', 'Rp 0', NULL, NULL, NULL, 1, '2025-06-05 09:16:42', '2025-06-05 10:10:27', 'https://google.com'),
-(2, 'Business', 'Rp 2.5 <span>jt</span>', '<span>Rp 6.5</span> <span>jt</span>', NULL, 1, 1, '2025-06-05 09:17:23', '2025-06-05 10:10:38', 'https://google.com'),
-(3, 'Developer', 'Rp 300.000', NULL, NULL, NULL, 1, '2025-06-05 09:17:47', '2025-06-05 10:10:49', 'https://google.com'),
-(4, 'Ultimate', 'Rp 1.000.000 / Bulan', 'Rp 1.300.000', 1, NULL, 1, '2025-06-05 09:18:18', '2025-06-05 10:10:57', 'https://google.com');
+INSERT INTO `price` (`id`, `title`, `harga`, `harga_coret`, `is_advance`, `is_unggulan`, `is_active`, `created_at`, `updated_at`, `link_buy`, `menus_id`) VALUES
+(1, 'Free', 'Rp20<span>jt</span>', NULL, NULL, NULL, 1, '2025-06-05 23:53:12', '2025-06-06 00:17:48', 'https://google.com', '4'),
+(2, 'Business', '<span>Rp1.4</span><span>jt</span>', '<span>Rp1.7</span><span>jt</span>', 1, NULL, 1, '2025-06-05 23:55:26', '2025-06-06 00:17:56', 'https://google.com', '4'),
+(3, 'Free', 'Rp 10<span>jt</span>', NULL, 1, NULL, 1, '2025-06-06 00:14:01', '2025-06-06 00:18:05', 'https://google.com', '5');
 
 -- --------------------------------------------------------
 
@@ -300,9 +342,6 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `module`, `key`, `value`, `lang`, `created_at`, `updated_at`) VALUES
-(4, 'setting', 'online', 'on', 'en', '2025-05-31 09:54:42', '2025-05-31 09:54:42'),
-(5, 'setting', 'favicon', 'files/favicon.png', 'en', '2025-05-31 09:54:42', '2025-05-31 09:54:42'),
-(6, 'setting', 'logo', 'files/logo-dummy.png', 'en', '2025-05-31 09:54:42', '2025-05-31 09:54:42'),
 (21, 'home', 'images', 'files/hero-carousel-2.jpg', 'en', '2025-06-05 08:21:34', '2025-06-05 08:21:34'),
 (22, 'home', 'title', 'Title Tes', 'en', '2025-06-05 08:21:34', '2025-06-05 08:21:34'),
 (23, 'home', 'intro', 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut.', 'en', '2025-06-05 08:21:34', '2025-06-05 08:21:34'),
@@ -310,7 +349,24 @@ INSERT INTO `settings` (`id`, `module`, `key`, `value`, `lang`, `created_at`, `u
 (25, 'home', 'link', 'https://google.com', 'en', '2025-06-05 08:21:34', '2025-06-05 08:21:34'),
 (26, 'localization', 'paket_pt', 'Paket Pendirian PT', 'en', '2025-06-05 10:24:30', '2025-06-05 10:24:30'),
 (27, 'localization', 'paket_cv', 'Paket Pendirian CV', 'en', '2025-06-05 10:24:30', '2025-06-05 10:24:30'),
-(28, 'localization', 'buy_now', 'Buy Nows', 'en', '2025-06-05 10:24:30', '2025-06-05 10:24:30');
+(28, 'localization', 'buy_now', 'Buy Nows', 'en', '2025-06-05 10:24:30', '2025-06-05 10:24:30'),
+(51, 'setting', 'online', 'on', 'en', '2025-06-06 07:12:01', '2025-06-06 07:12:01'),
+(52, 'setting', 'favicon', 'files/favicon.png', 'en', '2025-06-06 07:12:01', '2025-06-06 07:12:01'),
+(53, 'setting', 'logo', 'files/logo-dummy.png', 'en', '2025-06-06 07:12:01', '2025-06-06 07:12:01'),
+(54, 'setting', 'sosmed_tw', NULL, 'en', '2025-06-06 07:12:01', '2025-06-06 07:12:01'),
+(55, 'setting', 'sosmed_fb', NULL, 'en', '2025-06-06 07:12:01', '2025-06-06 07:12:01'),
+(56, 'setting', 'sosmed_ig', NULL, 'en', '2025-06-06 07:12:01', '2025-06-06 07:12:01'),
+(57, 'setting', 'sosmed_in', NULL, 'en', '2025-06-06 07:12:01', '2025-06-06 07:12:01'),
+(58, 'setting', 'copyright', '© <span>Copyright</span> <strong class=\"px-1 sitename\">PT TESS</strong> <span>All Rights Reserved</span>', 'en', '2025-06-06 07:12:01', '2025-06-06 07:12:01'),
+(59, 'setting', 'meta_title', 'Home | PT Tess', 'en', '2025-06-06 07:12:01', '2025-06-06 07:12:01'),
+(60, 'setting', 'meta_desc', 'Meta Desc', 'en', '2025-06-06 07:12:01', '2025-06-06 07:12:01'),
+(61, 'setting', 'meta_keyword', 'Meta Keyword', 'en', '2025-06-06 07:12:01', '2025-06-06 07:12:01'),
+(62, 'setting', 'meta_img', 'files/logo-dummy.png', 'en', '2025-06-06 07:12:01', '2025-06-06 07:12:01'),
+(63, 'contact', 'address', 'Jalan S.parman', 'en', '2025-06-07 09:22:37', '2025-06-07 09:22:37'),
+(64, 'contact', 'phone', '088787897988', 'en', '2025-06-07 09:22:37', '2025-06-07 09:22:37'),
+(65, 'contact', 'email', 'dafsad@mail.com', 'en', '2025-06-07 09:22:37', '2025-06-07 09:22:37'),
+(66, 'contact', 'iframe_map', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.5358897563606!2d106.79496387387886!3d-6.1927941937948106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f69478df636f%3A0xc283f16e9eda0173!2sMenara%20Citicon!5e0!3m2!1sid!2sid!4v1749216744791!5m2!1sid!2sid', 'en', '2025-06-07 09:22:37', '2025-06-07 09:22:37'),
+(67, 'contact', 'template_email', '<p>Hi %name%,<br />\r\n<br />\r\nYour email %email%<br />\r\n<br />\r\nThanks</p>', 'en', '2025-06-07 09:22:37', '2025-06-07 09:22:37');
 
 -- --------------------------------------------------------
 
@@ -374,18 +430,9 @@ INSERT INTO `widgets` (`id`, `base_id`, `module`, `name`, `sequence`, `is_active
 (29, 1, 'section4', 'image', '2025-05-31 20:35:01', 1, NULL, NULL),
 (30, 1, 'section4', 'image', '2025-05-31 20:35:01', 1, NULL, NULL),
 (31, 1, 'section5', 'image', '2025-06-01 15:05:30', 1, NULL, NULL),
-(52, 1, 'price', 'item', '2025-06-05 16:26:21', 1, NULL, NULL),
-(53, 1, 'price', 'item', '2025-06-05 16:26:21', 1, NULL, NULL),
-(54, 1, 'price', 'item', '2025-06-05 16:26:21', 1, NULL, NULL),
-(55, 1, 'price', 'item', '2025-06-05 16:26:21', 1, NULL, NULL),
-(56, 2, 'price', 'item', '2025-06-05 16:27:34', 1, NULL, NULL),
-(57, 2, 'price', 'item', '2025-06-05 16:27:34', 1, NULL, NULL),
-(58, 3, 'price', 'item', '2025-06-05 16:27:44', 1, NULL, NULL),
-(59, 4, 'price', 'item', '2025-06-05 16:27:54', 1, NULL, NULL),
-(60, 1, 'price_cv', 'item', '2025-06-05 17:15:12', 1, NULL, NULL),
-(61, 2, 'price_cv', 'item', '2025-06-05 17:16:11', 1, NULL, NULL),
-(62, 3, 'price_cv', 'item', '2025-06-05 17:16:46', 1, NULL, NULL),
-(63, 4, 'price_cv', 'item', '2025-06-05 17:17:39', 1, NULL, NULL);
+(81, 1, 'price', 'item', '2025-06-06 07:17:48', 1, NULL, NULL),
+(82, 2, 'price', 'item', '2025-06-06 07:17:56', 1, NULL, NULL),
+(83, 3, 'price', 'item', '2025-06-06 07:18:05', 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -452,22 +499,19 @@ INSERT INTO `widget_value` (`id`, `widget_id`, `lang`, `key`, `value`, `created_
 (89, 30, NULL, 'box3_title', 'gsdgs', NULL, NULL),
 (90, 30, NULL, 'box3_persen', '6%', NULL, NULL),
 (91, 31, NULL, 'images', 'files/news-1.png', NULL, NULL),
-(112, 52, NULL, 'items', 'Item 1', NULL, NULL),
-(113, 53, NULL, 'items', 'Item 2', NULL, NULL),
-(114, 54, NULL, 'items', 'Item 3', NULL, NULL),
-(115, 55, NULL, 'items', 'Item 4', NULL, NULL),
-(116, 56, NULL, 'items', 'Item 1', NULL, NULL),
-(117, 57, NULL, 'items', 'Item 2', NULL, NULL),
-(118, 58, NULL, 'items', 'Item 1', NULL, NULL),
-(119, 59, NULL, 'items', 'Item x', NULL, NULL),
-(120, 60, NULL, 'items', 'Item 1', NULL, NULL),
-(121, 61, NULL, 'items', 'item 1', NULL, NULL),
-(122, 62, NULL, 'items', 'Item1', NULL, NULL),
-(123, 63, NULL, 'items', 'Item 1', NULL, NULL);
+(141, 81, NULL, 'items', 'Item1', NULL, NULL),
+(142, 82, NULL, 'items', 'Item x', NULL, NULL),
+(143, 83, NULL, 'items', 'Item sa', NULL, NULL);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `contact_submit`
+--
+ALTER TABLE `contact_submit`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `failed_jobs`
@@ -574,6 +618,12 @@ ALTER TABLE `widget_value`
 --
 
 --
+-- AUTO_INCREMENT for table `contact_submit`
+--
+ALTER TABLE `contact_submit`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -583,7 +633,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `menus`
 --
 ALTER TABLE `menus`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `menus_lang`
@@ -595,13 +645,13 @@ ALTER TABLE `menus_lang`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `price`
 --
 ALTER TABLE `price`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `price_cv`
@@ -643,7 +693,7 @@ ALTER TABLE `section5_home`
 -- AUTO_INCREMENT for table `settings`
 --
 ALTER TABLE `settings`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- AUTO_INCREMENT for table `user_cms`
@@ -655,13 +705,13 @@ ALTER TABLE `user_cms`
 -- AUTO_INCREMENT for table `widgets`
 --
 ALTER TABLE `widgets`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 
 --
 -- AUTO_INCREMENT for table `widget_value`
 --
 ALTER TABLE `widget_value`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=124;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=144;
 
 --
 -- Constraints for dumped tables
