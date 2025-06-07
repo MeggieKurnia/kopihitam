@@ -115,31 +115,8 @@
     <!-- /Pricing Section -->
 
     <!-- Clients Section -->
-    <section id="clients" class="clients section light-background">
-
-      <div class="container" data-aos="fade-up">
-        <div class="row gy-4">
-          <div class="col-xl-2 col-md-3 col-6 client-logo">
-            <img src="assets/img/clients/client-1.png" class="img-fluid" alt="">
-          </div>
-          <div class="col-xl-2 col-md-3 col-6 client-logo">
-            <img src="assets/img/clients/client-2.png" class="img-fluid" alt="">
-          </div>
-          <div class="col-xl-2 col-md-3 col-6 client-logo">
-            <img src="assets/img/clients/client-3.png" class="img-fluid" alt="">
-          </div>
-          <div class="col-xl-2 col-md-3 col-6 client-logo">
-            <img src="assets/img/clients/client-4.png" class="img-fluid" alt="">
-          </div>
-          <div class="col-xl-2 col-md-3 col-6 client-logo">
-            <img src="assets/img/clients/client-5.png" class="img-fluid" alt="">
-          </div>
-          <div class="col-xl-2 col-md-3 col-6 client-logo">
-            <img src="assets/img/clients/client-6.png" class="img-fluid" alt="">
-          </div>
-        </div>
-      </div>
-    </section><!-- /Clients Section -->
+    <?php include 'client-slider.php' ?>
+    <!-- /Clients Section -->
 
     <!-- Features Section -->
     <section id="features" class="features section">
@@ -245,20 +222,20 @@
         <p class="ungu">About Us<br></p>
       </div><!-- End Section Title -->
       <div class="container">
-        <div class="row gy-4">
+        <div class="row gy-4 abu-abu">
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <p>
+            <p class="">
               “Dengan adanya Vorent saya </br>
               berharap dapat membantu pelaku usaha terutama UMKM agar dapat tumbuh berkembang.”
             </p>
-            <p><strong>— Fuad Ristiyanto, Vorent Founder</strong></p>
+            <p class="ungu"><strong>— Fuad Ristiyanto, Vorent Founder</strong></p>
           </div>
 
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
             <img src="assets/img/tabs/tab-1.png" alt="" class="img-fluid">
           </div>
 
-          <div class="col-lg-4 content" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-4 content " data-aos="fade-up" data-aos-delay="100">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
               magna aliqua.
@@ -274,115 +251,16 @@
     </section><!-- /About Section -->
 
     <!-- Portfolio Details Section -->
-    <section id="portfolio-details" class="portfolio-details section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2 class="abu-abu">Client</h2>
-        <p class="ungu">Testimonials<br></p>
-      </div><!-- End Section Title -->
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-6">
-            
-            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              <h2 class="ungu">Exercitationem repudiandae officiis neque suscipit</h2>
-              <p class="abu-abu">
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-              </p>
-            </div>
-            <div class="portfolio-details-slider swiper init-swiper">
-              <script type="application/json" class="swiper-config">
-                {
-                  "loop": true,
-                  "speed": 600,
-                  "autoplay": {
-                    "delay": 5000
-                  },
-                  "slidesPerView": "auto",
-                  "pagination": {
-                    "el": ".swiper-pagination",
-                    "type": "bullets",
-                    "clickable": true
-                  }
-                }
-              </script>
-              <div class="swiper-wrapper align-items-center">
-
-                <div class="swiper-slide">
-                  <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="ungu">Project information</h3>
-                    <ul>
-                      <li class="abu-abu"><strong>Category</strong>: Web design</li>
-                      <li class="abu-abu"><strong>Client</strong>: ASU Company</li>
-                      <li class="abu-abu"><strong>Project date</strong>: 01 March, 2020</li>
-                      <li class="abu-abu"><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
-                    </ul>
-                  </div>
-                </div>
-                
-                <div class="swiper-slide">
-                  <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="ungu">Project information</h3>
-                    <ul>
-                      <li class="abu-abu"><strong>Category</strong>: Web design</li>
-                      <li class="abu-abu"><strong>Client</strong>: ASU Company</li>
-                      <li class="abu-abu"><strong>Project date</strong>: 01 March, 2020</li>
-                      <li class="abu-abu"><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
-                    </ul>
-                  </div>
-                </div>
-                
-                <div class="swiper-slide">
-                  <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="ungu">Project information</h3>
-                    <ul>
-                      <li class="abu-abu"><strong>Category</strong>: Web design</li>
-                      <li class="abu-abu"><strong>Client</strong>: ASU Company</li>
-                      <li class="abu-abu"><strong>Project date</strong>: 01 March, 2020</li>
-                      <li class="abu-abu"><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
-                    </ul>
-                  </div>
-                </div>
-                
-                <div class="swiper-slide">
-                  <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="ungu">Project information</h3>
-                    <ul>
-                      <li class="abu-abu"><strong>Category</strong>: Web design</li>
-                      <li class="abu-abu"><strong>Client</strong>: ASU Company</li>
-                      <li class="abu-abu"><strong>Project date</strong>: 01 March, 2020</li>
-                      <li class="abu-abu"><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
-                    </ul>
-                  </div>
-                </div>
-
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
-          </div>
-
-          <div class="col-lg-6">
-            <!-- <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-              <h3>Project information</h3>
-              <ul>
-                <li><strong>Category</strong>: Web design</li>
-                <li><strong>Client</strong>: ASU Company</li>
-                <li><strong>Project date</strong>: 01 March, 2020</li>
-                <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
-              </ul>
-            </div> -->
-            <img src="assets/img/tabs/tab-1.png" alt="" class="img-fluid">
-          </div>
-
-        </div>
-
-      </div>
-
-    </section><!-- /Portfolio Details Section -->
+    <?php include 'testimonials.php'; ?>
+    <!-- /Portfolio Details Section -->
 
     <!-- FAQ -->
     <?php include 'faq.php'; ?>
+    <!-- /FAQ -->
+
+    <!-- ONLY PARAGRAF -->
+    <?php include 'only-paragraf.php'; ?>
+    <!-- /ONLY PARAGRAF -->
 
   </main>
 
