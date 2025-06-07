@@ -35,13 +35,13 @@ return[
 			'controller'=>'\AdminApp\\Controllers\\SettingController',
 			'fa'=>'fa fa-gear'
 		],
-		// 'localization'=>[
-		// 	'label'=>'Localization',
-		// 	'parent'=>'website-setting',
-		// 	'route'=>['setting'],
-		// 	'controller'=>'\\App\\Http\\Controllers\\Admin\\LocalizationController',
-		// 	'fa'=>'fa fa-gear'
-		// ],
+		'localization'=>[
+			'label'=>'Localization',
+			'parent'=>'website-setting',
+			'route'=>['setting'],
+			'controller'=>'\\App\\Http\\Controllers\\Admin\\LocalizationController',
+			'fa'=>'fa fa-gear'
+		],
 		// 'tes'=>[
 		// 	'label'=>'Tes',
 		// 	'parent'=>'website-setting',
@@ -61,35 +61,48 @@ return[
 			'controller'=>'\\App\\Http\\Controllers\\Admin\\HomeController',
 			'fa'=>'fa fa-gear'
 		],
-
-		'section2'=>[
-			'label'=>'Section 2',
+		'price'=>[
+			'label'=>'Price PT',
 			'parent'=>'home_content',
 			'route'=>['index','edit'],
-			'controller'=>'\\App\\Http\\Controllers\\Admin\\Section2homeController',
-			'fa'=>'fa fa-gear'
+			'controller'=>'\\App\\Http\\Controllers\\Admin\\PriceController',
+			'fa'=>'fa fa-money'
 		],
-		'section3'=>[
-			'label'=>'Section 3',
+		'price_cv'=>[
+			'label'=>'Price CV',
 			'parent'=>'home_content',
-			'route'=>['index','edit'],
-			'controller'=>'\\App\\Http\\Controllers\\Admin\\Section3homeController',
-			'fa'=>'fa fa-gear'
+			'route'=>['create','index','edit','delete'],
+			'controller'=>'\\App\\Http\\Controllers\\Admin\\PricecvController',
+			'fa'=>'fa fa-money'
 		],
-		'section4'=>[
-			'label'=>'Section 4',
-			'parent'=>'home_content',
-			'route'=>['index','edit'],
-			'controller'=>'\\App\\Http\\Controllers\\Admin\\Section4homeController',
-			'fa'=>'fa fa-gear'
-		],
-		'section5'=>[
-			'label'=>'Section 5',
-			'parent'=>'home_content',
-			'route'=>['create','index','edit'],
-			'controller'=>'\\App\\Http\\Controllers\\Admin\\Section5homeController',
-			'fa'=>'fa fa-gear'
-		]
+		// 'section2'=>[
+		// 	'label'=>'Section 2',
+		// 	'parent'=>'home_content',
+		// 	'route'=>['index','edit'],
+		// 	'controller'=>'\\App\\Http\\Controllers\\Admin\\Section2homeController',
+		// 	'fa'=>'fa fa-gear'
+		// ],
+		// 'section3'=>[
+		// 	'label'=>'Section 3',
+		// 	'parent'=>'home_content',
+		// 	'route'=>['index','edit'],
+		// 	'controller'=>'\\App\\Http\\Controllers\\Admin\\Section3homeController',
+		// 	'fa'=>'fa fa-gear'
+		// ],
+		// 'section4'=>[
+		// 	'label'=>'Section 4',
+		// 	'parent'=>'home_content',
+		// 	'route'=>['index','edit'],
+		// 	'controller'=>'\\App\\Http\\Controllers\\Admin\\Section4homeController',
+		// 	'fa'=>'fa fa-gear'
+		// ],
+		// 'section5'=>[
+		// 	'label'=>'Section 5',
+		// 	'parent'=>'home_content',
+		// 	'route'=>['create','index','edit'],
+		// 	'controller'=>'\\App\\Http\\Controllers\\Admin\\Section5homeController',
+		// 	'fa'=>'fa fa-gear'
+		// ]
 	// 	'home'=>[
 	// 		'label'=>'Home',
 	// 		'fa'=>'fa fa-home',

@@ -36,53 +36,67 @@
   ======================================================== -->
   <style>
     .price-strike span:first-child {
-    /* Ini gaya untuk angka (amount) */
-    position: relative;
-    display: inline-block;
-    font-size: 1rem;
-    font-weight: 600;
-    color: #556270;
-  }
+      /* Ini gaya untuk angka (amount) */
+      position: relative;
+      display: inline-block;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #556270;
+    }
 
-  .price-strike span:first-child::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 50%;
-    height: 3px;
-    background-color: #f96a25;
-    transform: translateY(-50%);
-    z-index: 1;
-    pointer-events: none;
-  }
+    .price-strike span:first-child::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      height: 3px;
+      background-color: #f96a25;
+      transform: translateY(-50%);
+      z-index: 1;
+      pointer-events: none;
+    }
 
-  .price-strike span:last-child {
-    /* Ini gaya untuk satuan (unit) */
-    font-size: 0.5rem;
-    color: #a0a0a0;
-  }
+    .price-strike span:last-child {
+      /* Ini gaya untuk satuan (unit) */
+      font-size: 0.5rem;
+      color: #a0a0a0;
+    }
 
-  .heading-title {
-    font-family: "Open Sans", Sans-serif;
-    font-size: 25px;
-    font-weight: 600;
-    line-height: 1.3em;
-    color: #000000;
-  }
-  .btn-orange-kopihitam {
-    background: #f96a25;
-    color: #ffffff;
-    display: inline-block;
-    padding: 8px 35px 10px 35px;
-    border-radius: 4px;
-    transition: none;
-    font-size: 14px;
-    font-weight: 400;
-    font-family: Raleway, sans-serif;
-    font-weight: 600;
-    transition: 0.3s;
-  }
+    .heading-title {
+      font-family: "Open Sans", Sans-serif;
+      font-size: 25px;
+      /* font-weight: 600; */
+      line-height: 1.3em;
+      color: #000000;
+    }
+
+    .btn-orange-kopihitam {
+      background: #f96a25;
+      color: #ffffff;
+      display: inline-block;
+      padding: 8px 35px 10px 35px;
+      border-radius: 4px;
+      transition: none;
+      font-size: 14px;
+      font-weight: 400;
+      font-family: "Raleway", sans-serif;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .ungu {
+      color: #2f1c6a !important;
+    }
+
+    .abu-abu {
+      color: #727586 !important;
+    }
+
+    .footer-color {
+      background-color: #1e112e !important;
+      color: #ADADAD !important;
+    }
   </style>
 </head>
 
@@ -187,11 +201,11 @@
               <h4>4.5<span>jt</span></h4>
               
               <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
+                <li class="abu-abu">Aida dere</li>
+                <li class="abu-abu">Nec feugiat nisl</li>
+                <li class="abu-abu">Nulla at volutpat dola</li>
+                <li class="abu-abu">Pharetra massa</li>
+                <li class="na abu-abu">Massa ultricies mi</li>
               </ul>
               <div class="btn-wrap">
                 <a href="#" class="btn-buy">Buy Now</a>
@@ -248,7 +262,7 @@
         <div class="row gy-4">
 
           <div class="col-xl-6 col-md-3 col-6 client-logo heading-title">
-            <p style="margin-bottom: 0 !important;">Mewujudkan impian Anda untuk memulai bisnis</p>
+            <p class="ungu" style="margin-bottom: 0 !important;">Mewujudkan impian <strong>Anda untuk memulai bisnis</strong></p>
           </div>
 
           <div class="col-xl-3 col-md-3 col-6 client-logo">
@@ -320,11 +334,11 @@
               <h4>4.5<span>jt</span></h4>
               
               <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
+                <li class="abu-abu">Aida dere</li>
+                <li class="abu-abu">Nec feugiat nisl</li>
+                <li class="abu-abu">Nulla at volutpat dola</li>
+                <li class="abu-abu">Pharetra massa</li>
+                <li class="na abu-abu">Massa ultricies mi</li>
               </ul>
               <div class="btn-wrap">
                 <a href="#" class="btn-buy">Buy Now</a>
@@ -375,7 +389,7 @@
 
   </main>
 
-  <footer id="footer" class="footer dark-background">
+  <footer id="footer" class="footer dark-background footer-color">
 
     <div class="container footer-top">
       <div class="row gy-4">

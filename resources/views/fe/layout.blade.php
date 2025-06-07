@@ -26,6 +26,7 @@
 
   <!-- Main CSS File -->
   <link href="{{asset('assets/css/main.css')}}" rel="stylesheet">
+  <link href="{{asset('assets/css/kopihitam.css')}}" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Sailor
@@ -93,7 +94,7 @@
     </div>
   </header>
   @yield('content')
-  <footer id="footer" class="footer dark-background">
+  <footer id="footer" class="footer dark-background footer-color">
 
     <div class="container footer-top">
       <div class="row gy-4">
