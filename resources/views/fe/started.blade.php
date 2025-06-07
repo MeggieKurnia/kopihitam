@@ -1,4 +1,4 @@
-<section id="clients" class="clients section light-background">
+<section id="clients-asd" class="clients section light-background">
   <div class="container" data-aos="fade-up">
     <div class="row gy-4">
       <div class="col-xl-6 col-md-3 col-6 client-logo heading-title">

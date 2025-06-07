@@ -39,11 +39,32 @@
       <div class="container" data-aos="fade-up">
 
         <div class="row gy-4">
-          @foreach($client->get() as $cl)
-          <div class="col-xl-2 col-md-3 col-6 client-logo">
-            <img src="{{asset($cl->image)}}" class="img-fluid" alt="">
-          </div><!-- End Client Item -->
-          @endforeach
+          <div class="portfolio-details-slider swiper init-swiper">
+            <script type="application/json" class="swiper-config">
+              {
+                "loop": true,
+                "speed": 600,
+                "autoplay": {
+                    "delay": 3000
+                },
+                "slidesPerView": 6,
+                "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                }
+              }
+            </script>
+            <div class="swiper-wrapper align-items-center">
+              @foreach($client->get() as $cl)
+              <div class="swiper-slide">
+                <div class="client-logo">
+                  <img src="{{asset($cl->image)}}" class="img-fluid" alt="">
+                </div>
+              </div>
+              @endforeach
+            </div>
+          </div>
         </div>
 
       </div>
