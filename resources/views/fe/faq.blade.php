@@ -1,3 +1,5 @@
+@php $wg = widget('menus','faq',$data->id); @endphp
+@if(count($wg))
 <section id="about-{{$data->id}}" class="about section">
     <!-- Section Title -->
     <div class="container section-title" data-aos="fade-up">
@@ -10,7 +12,7 @@
             <div class="col-md-3"></div>
         </div>
     </div><!-- End Section Title -->
-    @php $wg = widget('menus','faq',$data->id); @endphp
+    
     <div class="container">
         <div class="row gy-4">
             <div class="accordion" id="faqAccordion">
@@ -32,3 +34,4 @@
         </div>
     </div>
 </section>
+@endif
