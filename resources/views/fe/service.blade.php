@@ -9,7 +9,7 @@
         <h1 class="mb-2 mb-lg-0">Services</h1>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="{{url('/')}}">Beranda</a></li>
             <li class="current">Services</li>
           </ol>
         </nav>
