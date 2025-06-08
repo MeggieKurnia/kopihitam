@@ -354,7 +354,7 @@ class Helper{
       $def = getDefaultMeta();
       $meta = [
         'meta_title'=>$data->meta_title ?: $def['meta_title'],
-        'meta_desc'=>$data->meta_description ?: $def['meta_description'],
+        'meta_desc'=>$data->meta_description ?: $def['meta_desc'],
         'meta_keyword'=>$data->meta_title ?: $def['meta_keyword'],
         'meta_img'=>$data->meta_title ?: $def['meta_img'],
       ];

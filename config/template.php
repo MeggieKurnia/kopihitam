@@ -2,5 +2,7 @@
 return [
     'blank'=>'Blank',
     'service'=>'Service',
-    'contact'=>'Contact'
+    'about'=>'About',
+    'contact'=>'Contact',
+    'blog'=>'Blog'
 ];

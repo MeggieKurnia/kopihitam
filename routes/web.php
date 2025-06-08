@@ -9,8 +9,9 @@ Route::group(['middleware'=>['fe']],function(){
 		foreach($m as $mm){
 			if($mm->template == 'parent' || $mm->template == '')
 				continue;
-			if($mm->permalink != null)
+			if($mm->permalink != null){
 				Route::get($mm->permalink,'\\App\\Http\\Controllers\\Frontend\\MainController@getIndex');
+			}
 		}
 	}
 	Route::post('postContact',[App\Http\Controllers\Frontend\MainController::class,'postContact']);

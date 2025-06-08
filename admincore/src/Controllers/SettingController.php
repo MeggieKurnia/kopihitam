@@ -37,30 +37,36 @@ class SettingController extends CRUDController{
 
 			'sosmed_tw'=>[
 				'type'=>'text',
-				'label'=>'Link Twitter'
+				'label'=>'Link Twitter',
+				'value'=>Helper::getSetting('setting','sosmed_tw'),
 			],
 			'sosmed_fb'=>[
 				'type'=>'text',
-				'label'=>'Link Facebook'
+				'label'=>'Link Facebook',
+				'value'=>Helper::getSetting('setting','sosmed_fb'),
 			],
 			'sosmed_ig'=>[
 				'type'=>'text',
-				'label'=>'Link Instagram'
+				'label'=>'Link Instagram',
+				'value'=>Helper::getSetting('setting','sosmed_ig'),
 			],
 			'sosmed_in'=>[
 				'type'=>'text',
-				'label'=>'Link Linkedin'
+				'label'=>'Link Linkedin',
+				'value'=>Helper::getSetting('setting','sosmed_in'),
 			],
 
 			'copyright'=>[
 				'type'=>'text',
-				'label'=>'Copyright'
+				'label'=>'Copyright',
+				'value'=>Helper::getSetting('setting','copyright'),
 			],
 
 			'link_getstart'=>[
 				'type'=>'text',
 				'label'=>'Link Get Started',
-				'required'=>true
+				'required'=>true,
+				'value'=>Helper::getSetting('setting','link_getstart'),
 			],
 			
 

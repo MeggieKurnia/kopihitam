@@ -13,7 +13,7 @@
       </div>
       @endif
       <div class="col-xl-3 col-md-3 col-6 client-logo">
-        <a href="{!! \App\Helper::getSetting('setting','link_getstart') !!}" target="_blank" class="btn-orange-kopihitam">{!! \App\Helper::getSetting('localization','get_start') !!}</a>
+        <a href="{{ \App\Helper::getSetting('setting','link_getstart') }}" target="_blank" class="btn-orange-kopihitam">{!! \App\Helper::getSetting('localization','get_start') !!}</a>
       </div>
     </div>
   </div>

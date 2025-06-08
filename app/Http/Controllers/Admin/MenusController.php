@@ -104,6 +104,22 @@ class MenusController extends CRUDController{
 		return ['data'=>$res,'disabled'=>$d];
 	}
 
+	private function getTemplateAvial()
+	{
+		if(request()->segment(3) == 'create'){
+			$t = \Config::get('template');
+			$m = \App\Models\Menus::select('template')->whereIn('template',['about','contact','blog'])->pluck('template')->toArray();
+			$res = [];
+			foreach($t as $tk=>$ts){
+				if(!in_array(strtolower($ts),$m)){
+					$res[$tk] = $ts;
+				}
+			}
+			return $res;
+		}
+		return \Config::get('template');
+	}
+
 	function form($id=null){
 		$frm = $this->_getMenu($id);
 		$tmplate = config()->get('template');
@@ -118,7 +134,7 @@ class MenusController extends CRUDController{
 				'label'=>'Template Type',
 				'type'=>'select',
 				'required'=>request()->segment(3) == 'create' ? true : false,
-				'option'=>\Config::get('template')
+				'option'=>$this->getTemplateAvial()
 			],
 			'label'=>[
 				'type' => 'text',
@@ -131,6 +147,16 @@ class MenusController extends CRUDController{
 				'label'=>'Banner',
 				'info'=>'size:1920*800px'
 			],
+
+			'banner_title'=>[
+				'type' => 'text',
+				'label' => 'Banner Title',
+			],
+			'banner_intro'=>[
+				'type' => 'text',
+				'label' => 'Banner Intro',
+			],
+
 			'permalink'=>[
 				'type'=>'text',
 				'label' => 'Permalink',
@@ -252,13 +278,17 @@ class MenusController extends CRUDController{
 							if($(this).val() == 'service'){
 									$('[name=\"show_home\"]').parents('.form-group').show();
 									$('[name=\"show_started\"]').parents('.form-group').show();
-									$('.modal-body > div').eq(7).show();
+									$('.modal-body > div').eq(9).show();
+									$('#widgetData_faq').show();
+									$('.act-add-faq').parents('.justify-content-md-center').show();
 									$('[name=\"faq_title\"]').parents('.form-group').show();
 									$('[name=\"faq_show_home\"]').parents('.form-group').show();
 								}else{
 									$('[name=\"show_home\"]').parents('.form-group').hide();
 									$('[name=\"show_started\"]').parents('.form-group').hide();
-									$('.modal-body > div').eq(7).hide();
+									$('.modal-body > div').eq(9).hide();
+									$('#widgetData_faq').hide();
+									$('.act-add-faq').parents('.justify-content-md-center').hide();
 									$('[name=\"faq_title\"]').parents('.form-group').hide();
 									$('[name=\"faq_show_home\"]').parents('.form-group').hide();
 								}

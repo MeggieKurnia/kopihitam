@@ -55,7 +55,7 @@
       </a>
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="{{url('/')}}" class="">Beranda</a></li>
+          <li><a href="{{url('/')}}" class="{{in_array(request()->segment(1),['','/'])  ? 'active' : ''}}">Beranda</a></li>
           @php
             $tmp = [];
             $tmp2 = [];
@@ -69,7 +69,7 @@
             @if($m->is_parent == null)
               @php $child = \App\Helper::getChildMenus($m->id); @endphp
               <li class="{{ count($child) ? 'dropdown' : '' }}">
-                  <a href="{{ count($child) ? 'javascript:void(0)' : url($m->permalink) }}" class="{{$m->permalink == request()->segment(1) ? 'active' : ''}}">
+                  <a href="{{ count($child) ? 'javascript:void(0)' : url($m->permalink) }}" class="{{$m->permalink == request()->segment(1) && $m->permalink != null ? 'active' : ''}}">
                     @if(count($child))
                       <span>{{$m->label}}</span> <i class="bi bi-chevron-down toggle-dropdown"></i>
                     @else
@@ -97,7 +97,7 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="about.html">Get Started</a>
+      <a class="btn-getstarted" href="{{ \App\Helper::getSetting('setting','link_getstart') }}" target="_blank">{!! \App\Helper::getSetting('localization','get_start') !!}</a>
 
     </div>
   </header>

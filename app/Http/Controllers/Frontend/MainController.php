@@ -17,7 +17,13 @@ class MainController extends Controller
     		}else if($data->first()->template == 'contact'){
     			$data = $data->first();
     			return view('fe.contact',compact('data'));
-    		}
+    		}else if($data->first()->template == 'about'){
+                $data = $data->first();
+                return view('fe.about',compact('data'));
+            }else if($data->first()->template == 'blog'){
+                $data = $data->first();
+                return view('fe.blog',compact('data'));
+            }
     	}else{
     		abort(404);
     	}
@@ -44,10 +50,10 @@ class MainController extends Controller
         \DB::beginTransaction();
         try{
             $c = new \App\Models\ContactSubmit();
-            $c->name = request()->input('name');
-            $c->email = request()->input('email');
-            $c->subject = request()->input('subject');
-            $c->message = request()->input('message');
+            $c->name = htmlspecialchars(request()->input('name'));
+            $c->email = htmlspecialchars(request()->input('email'));
+            $c->subject = htmlspecialchars(request()->input('subject'));
+            $c->message = htmlspecialchars(request()->input('message'));
             $c->save();
             $txt = \App\Helper::getSetting('contact','template_email');
             $txt = str_replace("%name%",$c->name,$txt);
