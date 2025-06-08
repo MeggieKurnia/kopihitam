@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 07, 2025 at 08:13 PM
+-- Generation Time: Jun 08, 2025 at 04:01 PM
 -- Server version: 8.0.31-0ubuntu0.22.04.1
 -- PHP Version: 8.3.20
 
@@ -65,7 +65,8 @@ CREATE TABLE `contact_submit` (
 --
 
 INSERT INTO `contact_submit` (`id`, `name`, `email`, `subject`, `message`, `created_at`, `updated_at`) VALUES
-(4, 'fdsfdzs', 'ccbbaarsq@gmail.com', 'Tes Subject', 'Message Tes', '2025-06-07 09:30:53', '2025-06-07 09:30:53');
+(4, 'fdsfdzs', 'ccbbaarsq@gmail.com', 'Tes Subject', 'Message Tes', '2025-06-07 09:30:53', '2025-06-07 09:30:53'),
+(5, 'fsdfsd', 'ccbbaarsq@gmail.com', '&lt;script&gt;alert(&quot;dsf&quot;);&lt;/script&gt;', 'fsdfsad', '2025-06-08 08:57:00', '2025-06-08 08:57:00');
 
 -- --------------------------------------------------------
 
@@ -136,41 +137,22 @@ CREATE TABLE `menus` (
   `permalink` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `show_started` int DEFAULT '0',
   `faq_show_home` int NOT NULL DEFAULT '0',
-  `faq_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `faq_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `banner_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `banner_intro` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `menus`
 --
 
-INSERT INTO `menus` (`id`, `template`, `sequence_date`, `is_active`, `banner`, `is_parent`, `show_home`, `position`, `youtube_embed`, `created_at`, `updated_at`, `label`, `meta_title`, `meta_description`, `meta_keyword`, `meta_img`, `permalink`, `show_started`, `faq_show_home`, `faq_title`) VALUES
-(3, 'blank', '2025-06-06 03:13:10', 1, NULL, NULL, NULL, '[\"main\",\"bottom\"]', NULL, '2025-06-05 20:13:10', '2025-06-06 00:48:33', 'Service', NULL, NULL, NULL, NULL, NULL, 0, 0, NULL),
-(4, 'service', '2025-06-20 03:14:07', 1, 'files/hero-carousel-2.jpg', '3', 1, '[\"main\",\"bottom\"]', NULL, '2025-06-05 20:14:07', '2025-06-07 13:04:18', 'Service 1 dsada', 'Service 1 Meta title', 'Meta Desc', 'Keyword', 'files/favicon.png', 'service-1-dsada', 1, 1, 'Jasa Pembuatan PT se-Indonesia Tes'),
-(5, 'service', '2025-06-06 04:15:49', 1, 'files/favicon.png', '3', 1, '[\"bottom\"]', NULL, '2025-06-05 21:15:49', '2025-06-06 00:13:05', 'fsdfsa', 'fdsfasd', 'fds', 'fsda', NULL, 'fsdfsa-dss', 0, 0, NULL),
-(6, 'contact', '2025-04-07 20:42:00', 1, 'files/hero-carousel-2.jpg', NULL, NULL, '[\"main\"]', NULL, '2025-06-06 06:41:25', '2025-06-06 06:42:05', 'Contact', 'Contact', 'Contact', NULL, NULL, 'contact', 0, 0, NULL);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `menus_lang`
---
-
-DROP TABLE IF EXISTS `menus_lang`;
-CREATE TABLE `menus_lang` (
-  `id` bigint UNSIGNED NOT NULL,
-  `menus_id` bigint UNSIGNED NOT NULL,
-  `lang` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `label` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `permalink` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `title_content` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `section1` text COLLATE utf8mb4_unicode_ci,
-  `section2` text COLLATE utf8mb4_unicode_ci,
-  `meta_description` text COLLATE utf8mb4_unicode_ci,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+INSERT INTO `menus` (`id`, `template`, `sequence_date`, `is_active`, `banner`, `is_parent`, `show_home`, `position`, `youtube_embed`, `created_at`, `updated_at`, `label`, `meta_title`, `meta_description`, `meta_keyword`, `meta_img`, `permalink`, `show_started`, `faq_show_home`, `faq_title`, `banner_title`, `banner_intro`) VALUES
+(3, 'blank', '2025-06-06 03:13:10', 1, NULL, NULL, NULL, '[\"main\",\"bottom\"]', NULL, '2025-06-05 20:13:10', '2025-06-06 00:48:33', 'Service', NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, NULL, NULL),
+(4, 'service', '2025-06-20 03:14:07', 1, 'files/hero-carousel-2.jpg', '3', 1, '[\"main\",\"bottom\"]', NULL, '2025-06-05 20:14:07', '2025-06-07 13:04:18', 'Service 1 dsada', 'Service 1 Meta title', 'Meta Desc', 'Keyword', 'files/favicon.png', 'service-1-dsada', 1, 1, 'Jasa Pembuatan PT se-Indonesia Tes', NULL, NULL),
+(5, 'service', '2025-06-06 04:15:49', 1, 'files/favicon.png', '3', 1, '[\"bottom\"]', NULL, '2025-06-05 21:15:49', '2025-06-06 00:13:05', 'fsdfsa', 'fdsfasd', 'fds', 'fsda', NULL, 'fsdfsa-dss', 0, 0, NULL, NULL, NULL),
+(6, 'contact', '2025-04-07 20:42:00', 1, 'files/hero-carousel-2.jpg', NULL, NULL, '[\"main\"]', NULL, '2025-06-06 06:41:25', '2025-06-08 07:42:53', 'Contact', 'Contact', 'Contact', 'bhkk', NULL, 'contact', 0, 0, NULL, 'Banner Contact Us', 'Intro Banner Contact Us'),
+(7, 'about', '2025-06-08 14:07:42', 1, 'files/hero-carousel-2.jpg', NULL, NULL, '[\"main\"]', NULL, '2025-06-08 07:07:42', '2025-06-08 07:42:16', 'About', 'About us', 'About meta desc', 'About meta keyword sad', NULL, 'about', 0, 0, NULL, 'About us', 'Tes banner intro'),
+(10, 'blog', '2025-03-10 22:45:36', 1, 'files/hero-carousel-2.jpg', NULL, NULL, 'main', NULL, '2025-06-08 08:45:40', '2025-06-08 08:45:40', 'Blog', 'Blog', NULL, NULL, NULL, 'blog', 0, 0, NULL, 'Banner Title Blog', 'Banner Intro Blog');
 
 -- --------------------------------------------------------
 
@@ -211,7 +193,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (23, '2025_06_07_182936_create_client', 13),
 (24, '2025_06_07_184248_create_feture', 14),
 (26, '2025_06_07_192125_create_testimoni', 15),
-(27, '2025_06_07_195208_alter_menus', 16);
+(27, '2025_06_07_195208_alter_menus', 16),
+(28, '2025_06_08_141445_alter_menuss', 17);
 
 -- --------------------------------------------------------
 
@@ -422,19 +405,6 @@ INSERT INTO `settings` (`id`, `module`, `key`, `value`, `lang`, `created_at`, `u
 (65, 'contact', 'email', 'dafsad@mail.com', 'en', '2025-06-07 09:22:37', '2025-06-07 09:22:37'),
 (66, 'contact', 'iframe_map', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.5358897563606!2d106.79496387387886!3d-6.1927941937948106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f69478df636f%3A0xc283f16e9eda0173!2sMenara%20Citicon!5e0!3m2!1sid!2sid!4v1749216744791!5m2!1sid!2sid', 'en', '2025-06-07 09:22:37', '2025-06-07 09:22:37'),
 (67, 'contact', 'template_email', '<p>Hi %name%,<br />\r\n<br />\r\nYour email %email%<br />\r\n<br />\r\nThanks</p>', 'en', '2025-06-07 09:22:37', '2025-06-07 09:22:37'),
-(68, 'setting', 'online', 'on', 'en', '2025-06-07 11:19:27', '2025-06-07 11:19:27'),
-(69, 'setting', 'favicon', 'files/favicon.png', 'en', '2025-06-07 11:19:27', '2025-06-07 11:19:27'),
-(70, 'setting', 'logo', 'files/logo-dummy.png', 'en', '2025-06-07 11:19:27', '2025-06-07 11:19:27'),
-(71, 'setting', 'sosmed_tw', NULL, 'en', '2025-06-07 11:19:27', '2025-06-07 11:19:27'),
-(72, 'setting', 'sosmed_fb', NULL, 'en', '2025-06-07 11:19:27', '2025-06-07 11:19:27'),
-(73, 'setting', 'sosmed_ig', NULL, 'en', '2025-06-07 11:19:27', '2025-06-07 11:19:27'),
-(74, 'setting', 'sosmed_in', NULL, 'en', '2025-06-07 11:19:27', '2025-06-07 11:19:27'),
-(75, 'setting', 'copyright', NULL, 'en', '2025-06-07 11:19:27', '2025-06-07 11:19:27'),
-(76, 'setting', 'link_getstart', 'https://google.com', 'en', '2025-06-07 11:19:27', '2025-06-07 11:19:27'),
-(77, 'setting', 'meta_title', 'Home | PT Tess', 'en', '2025-06-07 11:19:27', '2025-06-07 11:19:27'),
-(78, 'setting', 'meta_desc', 'Meta Desc', 'en', '2025-06-07 11:19:27', '2025-06-07 11:19:27'),
-(79, 'setting', 'meta_keyword', 'Meta Keyword', 'en', '2025-06-07 11:19:27', '2025-06-07 11:19:27'),
-(80, 'setting', 'meta_img', 'files/logo-dummy.png', 'en', '2025-06-07 11:19:27', '2025-06-07 11:19:27'),
 (96, 'about', 'section_left', '<p>&ldquo;Dengan adanya Vorent saya<br />\r\nberharap dapat membantu pelaku usaha terutama UMKM agar dapat tumbuh berkembang.&rdquo;</p>\r\n\r\n<p><strong>&mdash; Fuad Ristiyanto, Vorent Founder</strong></p>', 'en', '2025-06-07 12:15:13', '2025-06-07 12:15:13'),
 (97, 'about', 'image', 'files/tab-4.png', 'en', '2025-06-07 12:15:13', '2025-06-07 12:15:13'),
 (98, 'about', 'section_right', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n\r\n<ul>\r\n	<li><i class=\"bi bi-check2-circle\"></i><span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>\r\n	<li><i class=\"bi bi-check2-circle\"></i><span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>\r\n	<li><i class=\"bi bi-check2-circle\"></i><span>Ullamco laboris nisi ut aliquip ex ea commodo</span></li>\r\n</ul>', 'en', '2025-06-07 12:15:13', '2025-06-07 12:15:13'),
@@ -442,7 +412,20 @@ INSERT INTO `settings` (`id`, `module`, `key`, `value`, `lang`, `created_at`, `u
 (104, 'localization', 'get_start', 'Get Started', 'en', '2025-06-07 13:12:38', '2025-06-07 13:12:38'),
 (105, 'localization', 'wujudkan_impian', 'Mewujudkan impian <strong>Anda untuk memulai bisnis</strong>', 'en', '2025-06-07 13:12:38', '2025-06-07 13:12:38'),
 (106, 'localization', 'buy_now', 'Buy Nows', 'en', '2025-06-07 13:12:38', '2025-06-07 13:12:38'),
-(107, 'localization', 'faq', 'FAQ xx?', 'en', '2025-06-07 13:12:38', '2025-06-07 13:12:38');
+(107, 'localization', 'faq', 'FAQ xx?', 'en', '2025-06-07 13:12:38', '2025-06-07 13:12:38'),
+(121, 'setting', 'online', 'on', 'en', '2025-06-08 08:54:37', '2025-06-08 08:54:37'),
+(122, 'setting', 'favicon', 'files/favicon.png', 'en', '2025-06-08 08:54:37', '2025-06-08 08:54:37'),
+(123, 'setting', 'logo', 'files/logo-dummy.png', 'en', '2025-06-08 08:54:37', '2025-06-08 08:54:37'),
+(124, 'setting', 'sosmed_tw', 'https://x.com', 'en', '2025-06-08 08:54:37', '2025-06-08 08:54:37'),
+(125, 'setting', 'sosmed_fb', 'https://facebook.com', 'en', '2025-06-08 08:54:37', '2025-06-08 08:54:37'),
+(126, 'setting', 'sosmed_ig', NULL, 'en', '2025-06-08 08:54:37', '2025-06-08 08:54:37'),
+(127, 'setting', 'sosmed_in', NULL, 'en', '2025-06-08 08:54:37', '2025-06-08 08:54:37'),
+(128, 'setting', 'copyright', '© Copyright PT TESS All Rights Reserved', 'en', '2025-06-08 08:54:37', '2025-06-08 08:54:37'),
+(129, 'setting', 'link_getstart', 'https://google.com', 'en', '2025-06-08 08:54:37', '2025-06-08 08:54:37'),
+(130, 'setting', 'meta_title', 'Home | PT Tess', 'en', '2025-06-08 08:54:37', '2025-06-08 08:54:37'),
+(131, 'setting', 'meta_desc', 'Meta Desc', 'en', '2025-06-08 08:54:37', '2025-06-08 08:54:37'),
+(132, 'setting', 'meta_keyword', 'Meta Keyword', 'en', '2025-06-08 08:54:37', '2025-06-08 08:54:37'),
+(133, 'setting', 'meta_img', 'files/logo-dummy.png', 'en', '2025-06-08 08:54:37', '2025-06-08 08:54:37');
 
 -- --------------------------------------------------------
 
@@ -537,7 +520,12 @@ INSERT INTO `widgets` (`id`, `base_id`, `module`, `name`, `sequence`, `is_active
 (83, 3, 'price', 'item', '2025-06-06 07:18:05', 1, NULL, NULL),
 (86, 1, 'testimoni', 'testi', '2025-06-07 19:35:59', 1, NULL, NULL),
 (89, 4, 'menus', 'faq', '2025-06-07 19:57:22', 1, NULL, NULL),
-(90, 4, 'menus', 'faq', '2025-06-07 19:57:22', 1, NULL, NULL);
+(90, 4, 'menus', 'faq', '2025-06-07 19:57:22', 1, NULL, NULL),
+(95, 7, 'menus', 'faq', '2025-06-08 14:07:42', 1, NULL, NULL),
+(96, 6, 'menus', 'faq', '2025-06-08 14:33:02', 1, NULL, NULL),
+(97, 8, 'menus', 'faq', '2025-06-08 15:41:54', 1, NULL, NULL),
+(98, 9, 'menus', 'faq', '2025-06-08 15:43:00', 1, NULL, NULL),
+(99, 10, 'menus', 'faq', '2025-06-08 15:45:40', 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -615,7 +603,17 @@ INSERT INTO `widget_value` (`id`, `widget_id`, `lang`, `key`, `value`, `created_
 (160, 89, NULL, 'que', 'Pertanyaan 1', NULL, NULL),
 (161, 89, NULL, 'ans', 'Prosesnya meliputi pemilihan nama, akta notaris, NPWP, dan pendaftaran OSS.', NULL, NULL),
 (162, 90, NULL, 'que', 'Pertanyaan 2', NULL, NULL),
-(163, 90, NULL, 'ans', 'PT memberikan status hukum pada bisnis, melindungi aset pribadi, dan meningkatkan kredibilitas.', NULL, NULL);
+(163, 90, NULL, 'ans', 'PT memberikan status hukum pada bisnis, melindungi aset pribadi, dan meningkatkan kredibilitas.', NULL, NULL),
+(172, 95, NULL, 'que', NULL, NULL, NULL),
+(173, 95, NULL, 'ans', NULL, NULL, NULL),
+(174, 96, NULL, 'que', NULL, NULL, NULL),
+(175, 96, NULL, 'ans', NULL, NULL, NULL),
+(176, 97, NULL, 'que', NULL, NULL, NULL),
+(177, 97, NULL, 'ans', NULL, NULL, NULL),
+(178, 98, NULL, 'que', NULL, NULL, NULL),
+(179, 98, NULL, 'ans', NULL, NULL, NULL),
+(180, 99, NULL, 'que', NULL, NULL, NULL),
+(181, 99, NULL, 'ans', NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -650,13 +648,6 @@ ALTER TABLE `feature`
 --
 ALTER TABLE `menus`
   ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `menus_lang`
---
-ALTER TABLE `menus_lang`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `menus_lang_menus_id_foreign` (`menus_id`);
 
 --
 -- Indexes for table `migrations`
@@ -759,7 +750,7 @@ ALTER TABLE `client`
 -- AUTO_INCREMENT for table `contact_submit`
 --
 ALTER TABLE `contact_submit`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -777,19 +768,13 @@ ALTER TABLE `feature`
 -- AUTO_INCREMENT for table `menus`
 --
 ALTER TABLE `menus`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT for table `menus_lang`
---
-ALTER TABLE `menus_lang`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `price`
@@ -837,7 +822,7 @@ ALTER TABLE `section5_home`
 -- AUTO_INCREMENT for table `settings`
 --
 ALTER TABLE `settings`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=134;
 
 --
 -- AUTO_INCREMENT for table `testimoni`
@@ -855,23 +840,17 @@ ALTER TABLE `user_cms`
 -- AUTO_INCREMENT for table `widgets`
 --
 ALTER TABLE `widgets`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `widget_value`
 --
 ALTER TABLE `widget_value`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=164;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=182;
 
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `menus_lang`
---
-ALTER TABLE `menus_lang`
-  ADD CONSTRAINT `menus_lang_menus_id_foreign` FOREIGN KEY (`menus_id`) REFERENCES `menus` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `privillage`
