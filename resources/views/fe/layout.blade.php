@@ -67,9 +67,18 @@
               @php $tmp2[$m->id] = $m; @endphp
             @endif
             @if($m->is_parent == null)
-              @php $child = \App\Helper::getChildMenus($m->id); @endphp
+              @php $child = \App\Helper::getChildMenus($m->id); $xf = []; @endphp
               <li class="{{ count($child) ? 'dropdown' : '' }}">
-                  <a href="{{ count($child) ? 'javascript:void(0)' : url($m->permalink) }}" class="{{$m->permalink == request()->segment(1) && $m->permalink != null ? 'active' : ''}}">
+                  
+                  @if(count($child))
+                    @php
+                      $x = $child;
+                      foreach($x as $xx){
+                        $xf[]=$xx->permalink;
+                      }
+                    @endphp
+                  @endif
+                  <a href="{{ count($child) ? 'javascript:void(0)' : url($m->permalink) }}" class="{{($m->permalink == request()->segment(1) && $m->permalink != null) ||in_array(request()->segment(1),$xf) ? 'active' : ''}}">
                     @if(count($child))
                       <span>{{$m->label}}</span> <i class="bi bi-chevron-down toggle-dropdown"></i>
                     @else

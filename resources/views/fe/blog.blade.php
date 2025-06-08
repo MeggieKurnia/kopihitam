@@ -1,6 +1,18 @@
 @extends('fe.layout')
 @section('content')
 	@include('fe.banner')
+	<!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">{{$data->label}}</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="{{url('/')}}">Beranda</a></li>
+            <li class="current">{{$data->label}}</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
 	<div class="container">
       <div class="row">
 

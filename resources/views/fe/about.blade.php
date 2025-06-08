@@ -9,6 +9,7 @@
         <h1 class="mb-2 mb-lg-0">{{$data->label}}</h1>
         <nav class="breadcrumbs">
           <ol>
+            <li><a href="{{url('/')}}">Beranda</a></li>
             <li class="current">{{$data->label}}</li>
           </ol>
         </nav>
