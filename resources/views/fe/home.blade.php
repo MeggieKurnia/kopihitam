@@ -39,7 +39,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="row gy-4">
-            <div class="portfolio-details-slider swiper init-swiper">
+          <div class="portfolio-details-slider swiper init-swiper">
             <script type="application/json" class="swiper-config">
               {
                 "loop": true,
@@ -55,7 +55,6 @@
                 }
               }
             </script>
-
             <div class="swiper-wrapper align-items-center">
               @foreach($client->get() as $cl)
               <div class="swiper-slide">
