@@ -4,5 +4,6 @@ return [
     'service'=>'Service',
     'about'=>'About',
     'contact'=>'Contact',
-    'blog'=>'Blog'
+    'blog'=>'Blog',
+    'static'=>'Static'
 ];

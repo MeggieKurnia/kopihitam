@@ -23,6 +23,9 @@ class MainController extends Controller
             }else if($data->first()->template == 'blog'){
                 $data = $data->first();
                 return view('fe.blog',compact('data'));
+            }else if($data->first()->template == 'static'){
+                $data = $data->first();
+                return view('fe.static',compact('data'));
             }
     	}else{
     		abort(404);

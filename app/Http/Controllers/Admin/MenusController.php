@@ -230,6 +230,16 @@ class MenusController extends CRUDController{
 				]
 			],
 
+			'title_static'=>[
+				'type'=>'text',
+				'label'=>'Title Static'
+			],
+			'content_static'=>[
+				'type'=>'textarea',
+				'class'=>'ckeditor',
+				'label'=>'Content Static'
+			],
+
 			'meta_title'=>[
 				'type'=>'text',
 				'label' => 'Meta/Page Title',
@@ -315,6 +325,8 @@ class MenusController extends CRUDController{
 									$('[name=\"about_image\"]').parents('.form-group').hide();
 									$('[name=\"about_title\"]').parents('.form-group').hide();
 									$('.act-add-content_about').parents('.justify-content-md-center').hide();
+									$('[name=\"title_static\"]').parents('.form-group').hide();
+									$('[name=\"content_static\"]').parents('.form-group').hide();
 								}else{
 									$('[name=\"show_home\"]').parents('.form-group').hide();
 									$('[name=\"show_started\"]').parents('.form-group').hide();
@@ -335,6 +347,13 @@ class MenusController extends CRUDController{
 										$('[name=\"about_image\"]').parents('.form-group').hide();
 										$('[name=\"about_title\"]').parents('.form-group').hide();
 										$('.act-add-content_about').parents('.justify-content-md-center').hide();
+									}
+									if($(this).val() == 'static'){
+										$('[name=\"title_static\"]').parents('.form-group').show();
+										$('[name=\"content_static\"]').parents('.form-group').show();
+									}else{
+										$('[name=\"title_static\"]').parents('.form-group').hide();
+										$('[name=\"content_static\"]').parents('.form-group').hide();
 									}
 								}
 							if($(this).val() == 'blank'){
