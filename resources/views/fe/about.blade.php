@@ -16,31 +16,51 @@
       </div>
     </div><!-- End Page Title -->
 
-    @if(\App\Helper::getSetting('about','active') == '1')
-      <!-- About Section -->
-    <section id="about" class="about section">
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>About</h2>
-        <p class="ungu">About Us<br></p>
-      </div><!-- End Section Title -->
-      <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            {!! \App\Helper::getSetting('about','section_left') !!}
+    <!-- About 2 Section -->
+    <section id="about-2" class="about-2 section">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row g-4 g-lg-5" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="col-lg-5">
+            <div class="about-img">
+              <img src="{{asset($data->about_image)}}" class="img-fluid" alt="">
+            </div>
           </div>
 
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <img src="{{asset(\App\Helper::getSetting('about','image'))}}" alt="" class="img-fluid">
+          <div class="col-lg-7">
+            <h3 class="pt-0 pt-lg-5">{{$data->about_title}}</h3>
+            @php
+              $wa = widget('menus','content_about',$data->id);
+            @endphp
+            <!-- Tabs -->
+            @if(count($wa))
+            <ul class="nav nav-pills mb-3">
+              @php $tmpx=[];@endphp
+              @foreach($wa as $wwa)
+                @php $tmpx[$loop->index] = $wwa; @endphp
+              <li><a class="nav-link {{ $loop->index == 0 ? 'active' : ''}}" data-bs-toggle="pill" href="#about-{{$loop->index}}">{{$wwa['tab_title']}}</a></li>
+              @endforeach
+            </ul><!-- End Tabs -->
+
+            <!-- Tab Content -->
+            <div class="tab-content">
+              @foreach($tmpx as $k=>$tx)
+              <div class="tab-pane fade {{$k == 0 ? 'show active' : ''}}" id="about-{{$k}}">
+                {!! $tx['tab_content'] !!}
+              </div><!-- End Tab 1 Content -->
+              @endforeach
+            </div>
+            @endif
+
           </div>
 
-          <div class="col-lg-4 content" data-aos="fade-up" data-aos-delay="100">
-            {!! \App\Helper::getSetting('about','section_right') !!}
-          </div>
         </div>
+
       </div>
-    </section><!-- /About Section -->
-    @endif
+
+    </section><!-- /About 2 Section -->
 
   </main>
 @endsection

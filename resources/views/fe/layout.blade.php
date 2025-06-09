@@ -42,6 +42,7 @@
   .no-strike {
     text-decoration: none;
   }
+
 </style>
 </head>
 

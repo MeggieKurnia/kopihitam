@@ -203,6 +203,33 @@ class MenusController extends CRUDController{
 				]
 			],
 
+			'about_title'=>[
+				'type'=>'text',
+				'label'=>'About Title'
+			],
+
+			'about_image'=>[
+				'type'=>'image',
+				'label'=>'About Image'
+			],
+			'content_about'=>[
+				'type'=>'widget',
+				'label'=>'Content About',
+				'data'=>[
+					[
+						'tab_title'=>[
+							'type'=>'text',
+							'label'=>'Tab Title'
+						],
+						'tab_content'=>[
+							'type'=>'textarea',
+							'class'=>'ckeditor',
+							'label'=>'Tab Content'
+						],
+					]
+				]
+			],
+
 			'meta_title'=>[
 				'type'=>'text',
 				'label' => 'Meta/Page Title',
@@ -283,6 +310,11 @@ class MenusController extends CRUDController{
 									$('.act-add-faq').parents('.justify-content-md-center').show();
 									$('[name=\"faq_title\"]').parents('.form-group').show();
 									$('[name=\"faq_show_home\"]').parents('.form-group').show();
+									$('.modal-body > div').eq(15).hide();
+									$('#widgetData_content_about').hide();
+									$('[name=\"about_image\"]').parents('.form-group').hide();
+									$('[name=\"about_title\"]').parents('.form-group').hide();
+									$('.act-add-content_about').parents('.justify-content-md-center').hide();
 								}else{
 									$('[name=\"show_home\"]').parents('.form-group').hide();
 									$('[name=\"show_started\"]').parents('.form-group').hide();
@@ -291,6 +323,19 @@ class MenusController extends CRUDController{
 									$('.act-add-faq').parents('.justify-content-md-center').hide();
 									$('[name=\"faq_title\"]').parents('.form-group').hide();
 									$('[name=\"faq_show_home\"]').parents('.form-group').hide();
+									if($(this).val() == 'about'){
+										$('.modal-body > div').eq(15).show();
+										$('#widgetData_content_about').show();
+										$('[name=\"about_image\"]').parents('.form-group').show();
+										$('[name=\"about_title\"]').parents('.form-group').show();
+										$('.act-add-content_about').parents('.justify-content-md-center').show();
+									}else{
+										$('.modal-body > div').eq(15).hide();
+										$('#widgetData_content_about').hide();
+										$('[name=\"about_image\"]').parents('.form-group').hide();
+										$('[name=\"about_title\"]').parents('.form-group').hide();
+										$('.act-add-content_about').parents('.justify-content-md-center').hide();
+									}
 								}
 							if($(this).val() == 'blank'){
 								$('[name=\"banner\"]').parents('.form-group').hide();
