@@ -96,3 +96,9 @@ h2.judul-section {
 .swiper-slide {
   padding: 0 !important;
 }
+
+.garis-batas {
+  color: #f96a25 !important;
+  background: none !important;
+  border-bottom: 3px solid !important;
+}

@@ -260,6 +260,7 @@
 
     <!-- ONLY PARAGRAF -->
     <?php include 'only-paragraf.php'; ?>
+    <?php include 'general-template.php'; ?>
     <!-- /ONLY PARAGRAF -->
 
   </main>
