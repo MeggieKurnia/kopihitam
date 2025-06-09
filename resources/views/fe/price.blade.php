@@ -3,7 +3,7 @@
 
   <!-- Section Title -->
   <div class="container section-title" data-aos="fade-up">
-    <h2 class="judul-section ungu">Paket {{$label}}</h2>
+    <p class="judul-section ungu">Paket {{$label}}</p>
   </div><!-- End Section Title -->
 
   <div class="container">
@@ -29,7 +29,7 @@
           @endphp
           <ul>
             @foreach($w as $l)
-                <li class="abu-abu">{{$l['items']}}</li>
+                <li class="abu-abu">{!!$l['items']!!}</li>
             @endforeach
           </ul>
           @php } @endphp

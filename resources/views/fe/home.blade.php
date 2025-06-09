@@ -118,8 +118,8 @@
     <section id="about" class="about section">
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>About</h2>
-        <p class="ungu">About Us<br></p>
+        <h2>Why</h2>
+        <p class="ungu">The XXX<br></p>
       </div><!-- End Section Title -->
       <div class="container">
         <div class="row gy-4">
