@@ -2,6 +2,7 @@
       font-size: 28px !important;
       font-weight: bold !important;
     }
+    
     .price-strike span:first-child {
       /* Ini gaya untuk angka (amount) */
       position: relative;
