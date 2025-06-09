@@ -15,27 +15,22 @@
         </nav>
       </div>
     </div><!-- End Page Title -->
-    <section id="portfolio-details" class="portfolio-details section">
-      <div class="container section-title" data-aos="fade-up">
-        <div class="row">
-          <div class="col-md-3"></div>
-          <div class="col-md-6">
-              {!! $data->title_static !!}
-          </div>
-          <div class="col-md-3"></div>
-        </div>
-      </div><!-- End Section Title -->
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-          <div class="col-lg-12">
+    <section id="about-2" class="about-2 section">
+  <div class="container" data-aos="fade-up">
+    <div class="row g-4 g-lg-5" data-aos="fade-up" data-aos-delay="200">
+      <div class="col-lg-12">
+        <h3 class="pt-0 pt-lg-5">{{$data->title_static}}</h3>
+        <ul class="nav nav-pills mb-3 garis-batas"></ul>
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="about-2-tab1">
             {!! $data->content_static !!}
+
           </div>
         </div>
-
       </div>
-
-    </section>
+    </div>
+  </div>
+</section>
 
   </main>
 @endsection
