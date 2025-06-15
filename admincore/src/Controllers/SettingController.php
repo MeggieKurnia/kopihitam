@@ -68,6 +68,23 @@ class SettingController extends CRUDController{
 				'required'=>true,
 				'value'=>Helper::getSetting('setting','link_getstart'),
 			],
+
+			'wa_text'=>[
+				'type'=>'text',
+				'label'=>'Whatsapp text Line 1',
+				'value'=>Helper::getSetting('setting','wa_text'),
+			],
+			'wa_text_2'=>[
+				'type'=>'text',
+				'label'=>'Whatsapp text Line 2',
+				'value'=>Helper::getSetting('setting','wa_text_2'),
+			],
+			'wa_num'=>[
+				'type'=>'text',
+				'label'=>'Whatsapp Number',
+				'value'=>Helper::getSetting('setting','wa_num'),
+			],
+
 			
 
 			'meta_title'=>[
