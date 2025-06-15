@@ -1,0 +1,114 @@
+
+p.judul-section::after{
+  content: "";
+  width: 120px;
+  height: 1px;
+  display: inline-block;
+  background: var(--accent-color);
+  margin: 4px 10px;
+}
+h2.judul-section {
+  font-size: 28px;
+  font-weight: bold;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+  max-width: 100%;
+  display: block;
+}
+.price-strike span:first-child {
+  /* Ini gaya untuk angka (amount) */
+  position: relative;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #556270;
+}
+.price-strike span:first-child::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 3px;
+  background-color: #f96a25;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.price-strike span:last-child {
+  /* Ini gaya untuk satuan (unit) */
+  font-size: 0.5rem;
+  color: #a0a0a0;
+}
+
+.heading-title {
+  font-family: "Open Sans", Sans-serif;
+  font-size: 25px;
+  /* font-weight: 600; */
+  line-height: 1.3em;
+  color: #000000;
+}
+
+.btn-orange-kopihitam {
+  background: #f96a25;
+  color: #ffffff;
+  display: inline-block;
+  padding: 8px 35px 10px 35px;
+  border-radius: 4px;
+  transition: none;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-orange-kopihitam:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+  color: white;
+  cursor: pointer;
+}
+
+.ungu {
+  color: #2f1c6a !important;
+}
+
+.abu-abu {
+  color: #727586 !important;
+}
+
+.footer-color {
+  background-color: #1e112e !important;
+  color: #ADADAD !important;
+}
+
+.accordion-bg-color {
+  /* color: #212529 !important; */
+  background-color: #00000000 !important;
+  box-shadow: none !important;
+}
+
+/* Hilangkan shadow dan border */
+.swiper-slide .portfolio-info {
+  box-shadow: none !important;
+  border: none !important;
+  border-radius: 3px !important;
+  background-color: #f2f4f6 !important;
+  padding: 2 !important;
+}
+
+.swiper-slide {
+  padding: 0 !important;
+}
+
+.garis-batas {
+  color: #f96a25 !important;
+  background: none !important;
+  border-bottom: 3px solid !important;
+}
+
+.banner-new {
+    min-height: calc(50vh - 90px) !important;
+}

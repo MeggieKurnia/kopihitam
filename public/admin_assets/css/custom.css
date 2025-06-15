@@ -1,0 +1,67 @@
+ /* Client styles go here by bungRiyan */
+/*nav#sidebar {
+    color: #999999;
+}*/
+nav#sidebar {padding-bottom:150px; color: #eeeeee;
+}
+.page-header {
+    padding: 15px 15px;
+    margin-bottom: 20px;
+}
+td img{object-fit:cover;border: 2px solid #eaeaea;}
+nav.navbar {
+    background: #cc0000;
+    color: #fff;
+}
+nav#sidebar li.active i {
+    color: #fff;
+    opacity: 1;
+}
+nav#sidebar li a i {color: #fff;
+    opacity: 1;
+}
+nav#sidebar li a:hover i, nav#sidebar li li a:hover i {color:#cc0000;opacity:1;}
+.cke_dialog_contents_body .cke_tpl_list {
+    border: #bcbcbc 1px solid;
+    margin: 1px;
+    height: 380px;
+    width: 480px;
+}
+body {font-size:0.9rem;}
+.col-form-label {
+    color: #c#cc0000a3;text-transform: uppercase;font-weight: bold;font-size: 11px;letter-spacing: 2px;margin-top:16px;
+}
+
+.text-info {
+    color: #ffffff50 !important;font-size:13px!important;
+}
+#login form input[type="submit"] {
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  background-color: #c#cc0000a3;
+  color: #eee;
+  font-weight: bold;
+  margin-bottom: 2em;
+  text-transform: uppercase;
+  width: 280px;
+}
+
+#login form input[type="submit"]:hover {
+  background-color: #c#cc0000a3;
+}
+.btn.btn-success, .btn.btn-danger {padding: 2px 15px; margin-bottom: 6px;}
+.custom-select-sm {
+    font-size: 100%;
+}
+.text-light.bg-primary.px-lg-1 {padding: 8px!important;padding-left: 8px!important;}
+.text-light.bg-primary.px-lg-1 > input[type=checkbox], input[type=radio] {
+    box-sizing: border-box;
+    margin: 0 0 0 20px;
+}
+.table {
+    color: #b1b1b1;
+}
+.block {
+    color: #b1b1b1;
+}
