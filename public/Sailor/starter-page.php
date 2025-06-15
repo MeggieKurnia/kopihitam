@@ -253,6 +253,8 @@
     <!-- Portfolio Details Section -->
     <?php include 'testimonials.php'; ?>
     <!-- /Portfolio Details Section -->
+    
+    <?php include 'service.php'; ?>
 
     <!-- FAQ -->
     <?php include 'faq.php'; ?>

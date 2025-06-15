@@ -112,3 +112,16 @@ h2.judul-section {
 .banner-new {
     min-height: calc(50vh - 90px) !important;
 }
+
+.populer {
+    background: var(--accent-color);
+    color: var(--contrast-color);
+    width: 200px;
+    position: absolute;
+    top: 18px;
+    right: -68px;
+    transform: rotate(45deg);
+    z-index: 1;
+    font-size: 14px;
+    padding: 1px 0 3px 0;
+}

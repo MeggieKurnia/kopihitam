@@ -30,6 +30,7 @@
   <link href="{{asset('assets/vendor/aos/aos.css')}}" rel="stylesheet">
   <link href="{{asset('assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
   <link href="{{asset('assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+  <link href="{{asset('assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
 
   <!-- Main CSS File -->
   <link href="{{asset('assets/css/main.css')}}" rel="stylesheet">
@@ -95,7 +96,8 @@
                             @php $tmp2[$c->id] = $c; @endphp
                           @endif
                           <li>
-                            <a href="{{$c->permalink}}" class="{{$c->permalink == request()->segment(1) ? 'active' : ''}}">{{$c->label}}</a>
+                            <a href="{{$c->permalink}}" class="{{$c->permalink == request()->segment(1) ? 'active' : ''}}">{{$c->label}}<label class="badge" style="background-color: #f96a25; color: white; display: block;">Danger</label></a>
+                            
                           </li>
                         @endforeach
                     </ul>
