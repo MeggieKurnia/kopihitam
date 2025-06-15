@@ -1,7 +1,7 @@
 <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
 
-      <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="" data-bs-interval="5000">
+      <div id="hero-carousel" class="carousel slide carousel-fade banner-new" data-bs-ride="" data-bs-interval="5000">
 
         <div class="carousel-item active">
           <img src="{{asset($data->banner)}}" alt="">

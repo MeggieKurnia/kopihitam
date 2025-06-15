@@ -108,3 +108,7 @@ h2.judul-section {
   background: none !important;
   border-bottom: 3px solid !important;
 }
+
+.banner-new {
+    min-height: calc(50vh - 90px) !important;
+}
