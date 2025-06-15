@@ -76,8 +76,8 @@
     <section id="features" class="features section">
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2 class="abu-abu">Features</h2>
-        <p class="ungu">Check Our Features<br></p>
+        <h2 class="abu-abu">{{\App\Helper::getSetting('localization','feture')}}</h2>
+        <p class="ungu">{{\App\Helper::getSetting('localization','check_feature')}}<br></p>
       </div><!-- End Section Title -->
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row">
@@ -115,11 +115,11 @@
     @endif
     @if(\App\Helper::getSetting('about','active') == '1')
       <!-- About Section -->
-    <section id="about" class="about section">
+    <section id="about" class="about section light-background">
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Why</h2>
-        <p class="ungu">The XXX<br></p>
+        <h2>{{\App\Helper::getSetting('localization','why_we')}}</h2>
+        <p class="ungu">{{\App\Helper::getSetting('localization','why_we_title')}}<br></p>
       </div><!-- End Section Title -->
       <div class="container">
         <div class="row gy-4">
@@ -143,8 +143,8 @@
        <!-- Portfolio Details Section -->
     <section id="portfolio-details" class="portfolio-details section">
       <div class="container section-title" data-aos="fade-up">
-        <h2 class="abu-abu">Client</h2>
-        <p class="ungu">Testimonials<br></p>
+        <h2 class="abu-abu">{{\App\Helper::getSetting('localization','client')}}</h2>
+        <p class="ungu">{{\App\Helper::getSetting('localization','testimonial')}}<br></p>
       </div><!-- End Section Title -->
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -181,12 +181,12 @@
                 @foreach($wd as $ww)
                 <div class="swiper-slide">
                   <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="ungu">Project information</h3>
+                    <h3 class="ungu">{{\App\Helper::getSetting('localization','project_info')}}</h3>
                     <ul>
-                      <li class="abu-abu"><strong>Category</strong>: {{$ww['category']}}</li>
-                      <li class="abu-abu"><strong>Client</strong>: {{$ww['clinet']}}</li>
-                      <li class="abu-abu"><strong>Project date</strong>: {{$ww['project_date']}}</li>
-                      <li class="abu-abu"><strong>Project URL</strong>: <a href="{{$ww['project_url']}}">{{$ww['project_url']}}</a></li>
+                      <li class="abu-abu"><strong>{{\App\Helper::getSetting('localization','project_cat')}}</strong>: {{$ww['category']}}</li>
+                      <li class="abu-abu"><strong>{{\App\Helper::getSetting('localization','project_cln')}}</strong>: {{$ww['clinet']}}</li>
+                      <li class="abu-abu"><strong>{{\App\Helper::getSetting('localization','project_date')}}</strong>: {{$ww['project_date']}}</li>
+                      <li class="abu-abu"><strong>{{\App\Helper::getSetting('localization','project_url')}}</strong>: <a href="{{$ww['project_url']}}">{{$ww['project_url']}}</a></li>
                     </ul>
                   </div>
                 </div>
