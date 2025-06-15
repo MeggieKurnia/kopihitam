@@ -59,7 +59,7 @@
               @foreach($client->get() as $cl)
               <div class="swiper-slide">
                 <div class="client-logo">
-                  <img src="{{asset($cl->image)}}" class="img-fluid" alt="">
+                  <img src="{{asset($cl->image)}}" class="img-fluid" alt="" style="width: auto; height: 92px">
                 </div>
               </div>
               @endforeach
