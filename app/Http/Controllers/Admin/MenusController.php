@@ -142,6 +142,20 @@ class MenusController extends CRUDController{
 				'class'=>'permalink',
 				'required'=>true,
 			],
+			'badge_text'=>[
+				'type' => 'text',
+				'label' => 'Badge Text',
+				'required'=>false,
+			],
+
+			'badge_new_line'=>[
+				'type'=>'select',
+				'label'=>'Badge New Line ?',
+				'option'=>[
+					'0'=>'False',
+					'1'=>'True'
+				]
+			],
 			'banner'=>[
 				'type'=>'image',
 				'label'=>'Banner',

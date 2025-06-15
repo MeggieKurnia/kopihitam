@@ -17,7 +17,7 @@
           @endif
           <h3>{{$p->title}}</h3>
           @if($p->harga_coret)
-          <h6 class="price-strike">
+          <h6 class="price-strike" style="font-size: 30px;">
             {!! $p->harga_coret !!}
           </h6>
           @endif

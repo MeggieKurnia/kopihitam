@@ -44,6 +44,92 @@
     text-decoration: none;
   }
 
+  .whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+  font-family: sans-serif;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  color:white;
+  transform: scale(1.05);
+}
+
+.whatsapp-float img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.whatsapp-text {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.2; /* Lebih rapat */
+}
+
+.whatsapp-text .line1 {
+  font-size: 12.5px;
+  font-weight: bold;
+  margin-bottom: 1px;
+}
+
+.whatsapp-text .line2 {
+  font-size: 11px;
+  opacity: 0.9;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 12px;
+  background-color: #6c757d;
+  color: white;
+}
+
+/* Variasi warna seperti Bootstrap */
+.badge-success {
+  background-color: #28a745;
+}
+
+.badge-danger {
+  background-color: #dc3545;
+}
+
+.badge-warning {
+  background-color: #f26622;
+  color: white;
+}
+
+.badge-primary {
+  background-color: #007bff;
+}
+
+.badge-info {
+  background-color: #17a2b8;
+}
+
+
+
+
 </style>
 </head>
 
@@ -58,6 +144,7 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="{{url('/')}}" class="{{in_array(request()->segment(1),['','/'])  ? 'active' : ''}}">Beranda</a></li>
+
           @php
             $tmp = [];
             $tmp2 = [];
@@ -84,7 +171,11 @@
                     @if(count($child))
                       <span>{{$m->label}}</span> <i class="bi bi-chevron-down toggle-dropdown"></i>
                     @else
-                      {{$m->label}}
+                      {{$m->label}} 
+                      @if($m->badge_text)
+                        @if($m->badge_new_line) <br/> @else &nbsp; @endif
+                        <span class="badge badge-warning">{{$m->badge_text}}</span>
+                      @endif
                     @endif
                   </a>
                   @if(count($child))
@@ -96,8 +187,12 @@
                             @php $tmp2[$c->id] = $c; @endphp
                           @endif
                           <li>
-                            <a href="{{$c->permalink}}" class="{{$c->permalink == request()->segment(1) ? 'active' : ''}}">{{$c->label}}<label class="badge" style="background-color: #f96a25; color: white; display: block;">Danger</label></a>
-                            
+                            <a href="{{$c->permalink}}" class="{{$c->permalink == request()->segment(1) ? 'active' : ''}}" style="display:block;">{{$c->label}}
+                               @if($c->badge_text)
+                                  @if($c->badge_new_line) <br/> @endif
+                                  <span class="badge badge-warning">{{$c->badge_text}}</span>
+                                @endif
+                            </a>
                           </li>
                         @endforeach
                     </ul>
@@ -185,11 +280,28 @@
     @endif
   </footer>
 
-  <!-- Scroll Top -->
+  <!-- hide Scroll Top
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
+    -->
   <!-- Preloader -->
   <div id="preloader"></div>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  @if((\App\Helper::getSetting('setting','wa_text') || \App\Helper::getSetting('setting','wa_text_2')) && \App\Helper::getSetting('setting','wa_num'))
+  <a href="https://wa.me/{{\App\Helper::getSetting('setting','wa_num')}}&text=tesss" class="whatsapp-float" target="_blank" aria-label="Konsultasi Gratis Sekarang">
+    <i class="fab fa-whatsapp fa-2x"></i>
+    <div class="whatsapp-text">
+      @if(\App\Helper::getSetting('setting','wa_text'))
+      <div class="line1">{{\App\Helper::getSetting('setting','wa_text')}}</div>
+      @endif
+      @if(\App\Helper::getSetting('setting','wa_text_2'))
+      <div class="line2">{{\App\Helper::getSetting('setting','wa_text_2')}}</div>
+      @endif
+    </div>
+  </a>
+  @endif
+  
 
   <!-- Vendor JS Files -->
   <script src="{{asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
