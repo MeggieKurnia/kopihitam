@@ -130,6 +130,45 @@
     </section><!-- /About Section -->
     @endif
 
+    @if($srv->count())
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="container section-title" data-aos="fade-up">
+              <center><h2 class="abu-abu">{{$srv->first()->title}}</h2></center>
+              <p class="ungu" style="margin-left: 145px;">{!! $srv->first()->subtitle !!}</p>
+            </div>
+            <div>
+              <center><p class="description abu-abu">{{$srv->first()->intro}}</p></center>
+            </div>
+          </div>
+          @php
+            $ws = widget('pembuatan_pt','feat',$srv->first()->id);
+          @endphp
+          @if(count($ws))
+            @foreach($ws as $wws)
+              <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-item d-flex position-relative h-100" style="border: none !important;">
+                  <i class="{{$wws['icon']}} icon flex-shrink-0"></i>
+                  <div>
+                    <h4 class="title"><a href="javascript:void(0)" class="stretched-link ungu">{{$wws['title']}}</a></h4>
+                    <p class="description abu-abu">{!! $wws['desc'] !!}</p>
+                  </div>
+                </div>
+              </div>
+            @endforeach
+          @endif
+        </div>
+      </div>
+    </section>
+    <!-- /Services Section -->
+
+    @endif
     @if($testi)
        <!-- Portfolio Details Section -->
     <section id="portfolio-details" class="portfolio-details section">

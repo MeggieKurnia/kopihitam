@@ -15,6 +15,7 @@ class HomeController extends Controller
         $client = \App\Models\Client::whereIsActive(1);
         $feature = \App\Models\Feature::whereIsActive(1);
         $testi = \App\Models\Testimoni::whereActiveHome(1)->first();
-        return view('fe.home',compact('menu','client','feature','testi'));
+        $srv = \App\Models\PembuatanPT::whereIsActive(1);
+        return view('fe.home',compact('menu','client','feature','testi','srv'));
     }
 }
