@@ -20,7 +20,7 @@ h2.judul-section {
   /* Ini gaya untuk angka (amount) */
   position: relative;
   display: inline-block;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #556270;
 }
@@ -30,7 +30,7 @@ h2.judul-section {
   left: 0;
   right: 0;
   top: 50%;
-  height: 3px;
+  height: 5px;
   background-color: #f96a25;
   transform: translateY(-50%);
   z-index: 1;
@@ -111,4 +111,17 @@ h2.judul-section {
 
 .banner-new {
     min-height: calc(50vh - 90px) !important;
+}
+
+.populer {
+    background: var(--accent-color);
+    color: var(--contrast-color);
+    width: 200px;
+    position: absolute;
+    top: 18px;
+    right: -68px;
+    transform: rotate(45deg);
+    z-index: 1;
+    font-size: 14px;
+    padding: 1px 0 3px 0;
 }
