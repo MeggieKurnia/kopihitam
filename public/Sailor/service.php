@@ -7,11 +7,11 @@
 
           <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="container section-title" data-aos="fade-up">
-              <center><h2 class="abu-abu">Jasa Pembuatan PT</h2></center>
-              <p class="ungu" style="margin-left: 145px;">Jasa Buat PT Murah<br/>Mulai 3 Juta</p>
+              <center><h2 class="abu-abu">Jasa Pembuatan PT</h2>
+              <p class="ungu">Jasa Buat PT Murah<br/>Mulai 3 Juta</p>
             </div>
             <div>
-              <center><p class="description abu-abu">Kami memberikan layanan jasa membuat pt dan sewa kantor virtual yang jauh lebih murah dan memiliki alamat domisili legal yang prestis. Walau tanpa kantor fisik namun tetap bisa menggunakan fasilitas Ruang Meeting yang telah disediakan</p></center>
+              <p class="description abu-abu">Kami memberikan layanan jasa membuat pt dan sewa kantor virtual yang jauh lebih murah dan memiliki alamat domisili legal yang prestis. Walau tanpa kantor fisik namun tetap bisa menggunakan fasilitas Ruang Meeting yang telah disediakan</p></center>
             </div>
           </div>
           <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
@@ -33,7 +33,7 @@
             </div>
           </div>
         </div>
-        
+
         <div class="row gy-4">
           <div class="col-md-6" data-aos="fade-up" data-aos-delay="100"></div>
           <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">

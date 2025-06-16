@@ -140,11 +140,11 @@
 
           <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="container section-title" data-aos="fade-up">
-              <center><h2 class="abu-abu">{{$srv->first()->title}}</h2></center>
-              <p class="ungu" style="margin-left: 145px;">{!! $srv->first()->subtitle !!}</p>
+              <center><h2 class="abu-abu">{{$srv->first()->title}}</h2>
+              <p class="ungu">{!! $srv->first()->subtitle !!}</p>
             </div>
             <div>
-              <center><p class="description abu-abu">{{$srv->first()->intro}}</p></center>
+              <p class="description abu-abu">{{$srv->first()->intro}}</p></center>
             </div>
           </div>
           @php
