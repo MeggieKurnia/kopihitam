@@ -50,7 +50,7 @@ class PembuatanPTController extends CRUDController{
 	        				// 	'bi bi-briefcase'=>'Brief Case',
 	        				// 	'bi bi-truck'=>'Truck'
 	        				// ],
-	        				'info'=>'Icon Avail <br/>bi bi-hand-thumbs-up<br/>bi bi-rocket-takeoff<br/>bi bi-briefcase<br/>bi bi-truck'
+	        				'info'=>'Icon Avail <br/>bi bi-hand-thumbs-up<br/>bi bi-rocket-takeoff<br/>bi bi-briefcase<br/>bi bi-truck<br/>Other Icon See https://icons.getbootstrap.com/'
 	        			],
 	        			'title'=>[
 				    		'type'=>'text',
