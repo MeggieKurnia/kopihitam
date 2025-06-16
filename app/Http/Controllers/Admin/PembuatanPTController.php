@@ -68,4 +68,11 @@ class PembuatanPTController extends CRUDController{
 	        'is_active'=>'is_active'
 		];
 	}
+
+	function _script(){
+		return '
+			$(".btn-danger").remove();
+			$(".fa-plus").parent().remove();
+		';
+	}
 }

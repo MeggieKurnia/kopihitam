@@ -152,15 +152,22 @@
           @endphp
           @if(count($ws))
             @foreach($ws as $wws)
-              <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
-                <div class="service-item d-flex position-relative h-100" style="border: none !important;">
-                  <i class="{{$wws['icon']}} icon flex-shrink-0"></i>
-                  <div>
-                    <h4 class="title"><a href="javascript:void(0)" class="stretched-link ungu">{{$wws['title']}}</a></h4>
-                    <p class="description abu-abu">{!! $wws['desc'] !!}</p>
-                  </div>
+              @if($loop->index == 2)
+                <div class="row gy-4">
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100"></div>
+              @endif
+                    <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                      <div class="service-item d-flex position-relative h-100" style="border: none !important;">
+                        <i class="{{$wws['icon']}} icon flex-shrink-0"></i>
+                        <div>
+                          <h4 class="title"><a href="javascript:void(0)" class="stretched-link ungu">{{$wws['title']}}</a></h4>
+                          <p class="description abu-abu">{!! $wws['desc'] !!}</p>
+                        </div>
+                      </div>
+                    </div>
+              @if($loop->index == 2)
                 </div>
-              </div>
+              @endif
             @endforeach
           @endif
         </div>
