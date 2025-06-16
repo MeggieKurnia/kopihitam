@@ -16,7 +16,7 @@
           </div>
           <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item d-flex position-relative h-100" style="border: none !important;">
-              <i class="bi bi-hand-thumbs-up icon flex-shrink-0"></i>
+              <i class="fa fa-thumbs-o-up icon flex-shrink-0"></i>
               <div>
                 <h4 class="title"><a href="#" class="stretched-link ungu">TERBAIK</a></h4>
                 <p class="description abu-abu">Kami memberikan pelayanan terbaik bagi klien kita, dan memastikan kepuasan pelanggan adalah prioritas bagi kita.</p>
@@ -37,7 +37,8 @@
           <div class="col-md-6" data-aos="fade-up" data-aos-delay="100"></div>
           <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item d-flex position-relative h-100" style="border: none !important;">
-              <i class="bi bi-briefcase icon flex-shrink-0"></i>
+              <i class="fa-solid fa-hands-praying icon flex-shrink-0"></i>
+              <i class="fa-solid fa-hands-praying"></i>
               <div>
                 <h4 class="title"><a href="#" class="stretched-link ungu">TERCEPAT</a></h4>
                 <p class="description abu-abu">Proses kami lakukan dengan profesional dan layanan komunikasi 24 jam full sehingga buat usaha menjadi cepat dan mudah.</p>
@@ -46,7 +47,7 @@
           </div>
           <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item d-flex position-relative h-100" style="border: none !important;">
-              <i class="bi bi-truck icon flex-shrink-0"></i>
+              <i class="fa-solid fa-truck-fast icon flex-shrink-0"></i>
               <div>
                 <h4 class="title"><a href="#" class="stretched-link ungu">TERPRAKTIS</a></h4>
                 <p class="description abu-abu">Sudah bukan zamannya lagi dalam membangun usaha repot dengan sewa menyewa kantor. langsung hubungi Team kami Aja.</p>
