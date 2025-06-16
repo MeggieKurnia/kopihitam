@@ -1,5 +1,21 @@
 @extends('fe.layout')
 @section('content')
+<style type="text/css">
+  .client-slider img {
+  max-height: 60px;
+  object-fit: contain;
+  margin: auto;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+.client-slider img:hover {
+  filter: none;
+  opacity: 1;
+}
+
+</style>
 <main class="main">
 
     <!-- Hero Section -->
@@ -33,42 +49,17 @@
     @endforeach
 
     @if($client->count())
-    <!-- Clients Section -->
-    <section id="clients" class="clients section light-background">
-
-      <div class="container" data-aos="fade-up">
-
-        <div class="row gy-4">
-          <div class="portfolio-details-slider swiper init-swiper">
-            <script type="application/json" class="swiper-config">
-              {
-                "loop": true,
-                "speed": 600,
-                "autoplay": {
-                    "delay": 3000
-                },
-                "slidesPerView": 6,
-                "pagination": {
-                    "el": ".swiper-pagination",
-                    "type": "bullets",
-                    "clickable": true
-                }
-              }
-            </script>
-            <div class="swiper-wrapper align-items-center">
-              @foreach($client->get() as $cl)
-              <div class="swiper-slide">
-                <div class="client-logo">
-                  <img src="{{asset($cl->image)}}" class="img-fluid" alt="" style="width: auto; height: 92px">
-                </div>
-              </div>
-              @endforeach
-            </div>
-        </div>
+    <section class="client-section py-5 light-background">
+  <div class="container">
+    <div class="swiper client-slider">
+      <div class="swiper-wrapper">
+        @foreach($client->get() as $cl)
+        <div class="swiper-slide"><img src="{{asset($cl->image)}}" alt="Client 1" class="img-fluid"></div>
+        @endforeach
       </div>
     </div>
-
-    </section><!-- /Clients Section -->
+  </div>
+</section>
     @endif
 
     @if($feature->count())
@@ -139,6 +130,52 @@
     </section><!-- /About Section -->
     @endif
 
+    @if($srv->count())
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="container section-title" data-aos="fade-up">
+              <center><h2 class="abu-abu">{{$srv->first()->title}}</h2></center>
+              <p class="ungu" style="margin-left: 145px;">{!! $srv->first()->subtitle !!}</p>
+            </div>
+            <div>
+              <center><p class="description abu-abu">{{$srv->first()->intro}}</p></center>
+            </div>
+          </div>
+          @php
+            $ws = widget('pembuatan_pt','feat',$srv->first()->id);
+          @endphp
+          @if(count($ws))
+            @foreach($ws as $wws)
+              @if($loop->index == 2)
+                <div class="row gy-4">
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100"></div>
+              @endif
+                    <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                      <div class="service-item d-flex position-relative h-100" style="border: none !important;">
+                        <i class="{{$wws['icon']}} icon flex-shrink-0"></i>
+                        <div>
+                          <h4 class="title"><a href="javascript:void(0)" class="stretched-link ungu">{{$wws['title']}}</a></h4>
+                          <p class="description abu-abu">{!! $wws['desc'] !!}</p>
+                        </div>
+                      </div>
+                    </div>
+              @if($loop->index == 3)
+                </div>
+              @endif
+            @endforeach
+          @endif
+        </div>
+      </div>
+    </section>
+    <!-- /Services Section -->
+
+    @endif
     @if($testi)
        <!-- Portfolio Details Section -->
     <section id="portfolio-details" class="portfolio-details section">
@@ -210,4 +247,21 @@
       @include('fe.faq',['data'=>$ttf])
     @endforeach
   </main>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  new Swiper(".client-slider", {
+    slidesPerView: 2,
+    spaceBetween: 10,
+    loop: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false
+    },
+    breakpoints: {
+      576: { slidesPerView: 3 },
+      768: { slidesPerView: 4 },
+      992: { slidesPerView: 5 }
+    }
+  });
+</script>
 @endsection

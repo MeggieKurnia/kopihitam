@@ -5,75 +5,59 @@
 
         <div class="row gy-4">
 
-          <div class="col-md-9" data-aos="fade-up" data-aos-delay="100"></div>
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="container section-title" data-aos="fade-up">
+              <center><h2 class="abu-abu">Jasa Pembuatan PT</h2></center>
+              <p class="ungu" style="margin-left: 145px;">Jasa Buat PT Murah<br/>Mulai 3 Juta</p>
+            </div>
+            <div>
+              <center><p class="description abu-abu">Kami memberikan layanan jasa membuat pt dan sewa kantor virtual yang jauh lebih murah dan memiliki alamat domisili legal yang prestis. Walau tanpa kantor fisik namun tetap bisa menggunakan fasilitas Ruang Meeting yang telah disediakan</p></center>
+            </div>
+          </div>
           <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item d-flex position-relative h-100">
-              <i class="bi bi-briefcase icon flex-shrink-0"></i>
+            <div class="service-item d-flex position-relative h-100" style="border: none !important;">
+              <i class="fa fa-thumbs-o-up icon flex-shrink-0"></i>
               <div>
-                <h4 class="title"><a href="#" class="stretched-link">Lorem Ipsum</a></h4>
-                <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-              </div>
-            </div>
-            <div class="service-item d-flex position-relative h-100">
-              <i class="bi bi-card-checklist icon flex-shrink-0"></i>
-              <div>
-                <h4 class="title"><a href="#" class="stretched-link">Dolor Sitema</a></h4>
-                <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+                <h4 class="title"><a href="#" class="stretched-link ungu">TERBAIK</a></h4>
+                <p class="description abu-abu">Kami memberikan pelayanan terbaik bagi klien kita, dan memastikan kepuasan pelanggan adalah prioritas bagi kita.</p>
               </div>
             </div>
           </div>
-
-          <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item d-flex position-relative h-100">
-              <i class="bi bi-card-checklist icon flex-shrink-0"></i>
+          <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item d-flex position-relative h-100" style="border: none !important;">
+              <i class="bi bi-rocket-takeoff icon flex-shrink-0"></i>
               <div>
-                <h4 class="title"><a href="#" class="stretched-link">Dolor Sitema</a></h4>
-                <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+                <h4 class="title"><a href="#" class="stretched-link ungu">TERAMAH</a></h4>
+                <p class="description abu-abu">Team kami memberikan pelayanan 24 jam dan responsive dalam setiap pertanyaan yang diajukan oleh para klien.</p>
               </div>
             </div>
           </div>
-
-          <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item d-flex position-relative h-100">
-              <i class="bi bi-bar-chart icon flex-shrink-0"></i>
+        </div>
+        
+        <div class="row gy-4">
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="100"></div>
+          <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item d-flex position-relative h-100" style="border: none !important;">
+              <i class="fa-solid fa-hands-praying icon flex-shrink-0"></i>
+              <i class="fa-solid fa-hands-praying"></i>
               <div>
-                <h4 class="title"><a href="#" class="stretched-link">Sed ut perspiciatis</a></h4>
-                <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                <h4 class="title"><a href="#" class="stretched-link ungu">TERCEPAT</a></h4>
+                <p class="description abu-abu">Proses kami lakukan dengan profesional dan layanan komunikasi 24 jam full sehingga buat usaha menjadi cepat dan mudah.</p>
               </div>
             </div>
           </div>
-
-          <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item d-flex position-relative h-100">
-              <i class="bi bi-binoculars icon flex-shrink-0"></i>
+          <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item d-flex position-relative h-100" style="border: none !important;">
+              <i class="fa-solid fa-truck-fast icon flex-shrink-0"></i>
               <div>
-                <h4 class="title"><a href="#" class="stretched-link">Magni Dolores</a></h4>
-                <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                <h4 class="title"><a href="#" class="stretched-link ungu">TERPRAKTIS</a></h4>
+                <p class="description abu-abu">Sudah bukan zamannya lagi dalam membangun usaha repot dengan sewa menyewa kantor. langsung hubungi Team kami Aja.</p>
               </div>
             </div>
           </div>
-
-          <!-- <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="service-item d-flex position-relative h-100">
-              <i class="bi bi-brightness-high icon flex-shrink-0"></i>
-              <div>
-                <h4 class="title"><a href="#" class="stretched-link">Nemo Enim</a></h4>
-                <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-              </div>
-            </div>
-          </div> -->
-
-          <!-- <div class="col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="service-item d-flex position-relative h-100">
-              <i class="bi bi-calendar4-week icon flex-shrink-0"></i>
-              <div>
-                <h4 class="title"><a href="#" class="stretched-link">Eiusmod Tempor</a></h4>
-                <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
-              </div>
-            </div>
-          </div> -->
 
         </div>
+        
 
       </div>
 

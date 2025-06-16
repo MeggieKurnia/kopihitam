@@ -82,6 +82,13 @@ return[
 			'controller'=>'\\App\\Http\\Controllers\\Admin\\AboutController',
 			'fa'=>'fa fa-gear'
 		],
+		'pembuatan_pt'=>[
+			'label'=>'Pembuatan PT',
+			'parent'=>'home_content',
+			'route'=>['index','edit'],
+			'controller'=>'\\App\\Http\\Controllers\\Admin\\PembuatanPTController',
+			'fa'=>'fa fa-gear'
+		],
 		'testimoni'=>[
 			'label'=>'Testimonials',
 			'parent'=>'home_content',
