@@ -165,7 +165,7 @@
                         </div>
                       </div>
                     </div>
-              @if($loop->index == 2)
+              @if($loop->index == 3)
                 </div>
               @endif
             @endforeach
